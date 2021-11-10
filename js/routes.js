@@ -1,8 +1,8 @@
 import homePage from './pages/home-page.cmp.js'
 import aboutPage from './pages/about-page.cmp.js'
-import gmailApp from './pages/gmail-pages/gmail-app.js'
-import keepApp from './pages/keep-pages/keep-app.js'
-import bookApp from './pages/books-pages/book-app.js'
+import gmailApp from './apps/gmail-app/gmail-pages/gmail-app.js'
+import keepApp from './apps/keep-app/keep-pages/keep-app.js'
+import bookApp from './apps/book-app/books-pages/book-app.js'
 
 
 
