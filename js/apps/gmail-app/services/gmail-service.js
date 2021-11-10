@@ -1,5 +1,6 @@
-import {utilService} from '/js/services/util-service.js'
-import {storageService} from '/js/services/async-storage-service.js'
+
+import {storageService} from '../../../services/async-storage-service.js'
+import {utilService} from "../../../services/util-service.js"
 
 
 const EMAILS_KEY ='emails'

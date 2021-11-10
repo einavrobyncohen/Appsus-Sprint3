@@ -1,6 +1,6 @@
 import { gmailService } from '../services/gmail-service.js'
-import {eventBus} from '/js/services/event-bus-service.js'
-import longText from '/js/cmps/long-text.cmp.js'
+import {eventBus} from '../../../services/event-bus-service.js'
+import longText from '../../../cmps/long-text.cmp.js'
 
 export default {
     props: ['email'],
