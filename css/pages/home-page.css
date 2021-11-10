@@ -1,0 +1,27 @@
+
+.home-img {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(/imgs/homepagephoto.png);
+    background-size: 1500px;
+    height: 1150px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    justify-content: center;
+    line-height: 4.5rem;
+    letter-spacing: 0.2rem;
+    
+}
+
+
+.home-img h1 {
+    margin: 0;
+    font-size: 3.75rem;
+}
+
+.home-img h2 {
+    margin: 0;
+    font-size: 40px;
+}
+
