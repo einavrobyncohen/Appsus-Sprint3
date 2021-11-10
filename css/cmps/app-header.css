@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 5vh;
-    background-color: lightpink;
+    background-color: rgb(235, 235, 235);
     cursor: pointer;
 }
 
@@ -11,7 +11,7 @@
     margin-right: 40px;
     width: 50px;
     height: 3vh;
-    background-color: crimson;
+    background-color: rgb(131, 71, 180);
 
 }
 
