@@ -1,0 +1,27 @@
+
+.email-filter  {
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 120px;
+    height: 70vh;
+    line-height: 2.5rem;
+}
+
+.email-filter ul {
+    list-style: none;
+}
+
+.email-filter li {
+    padding-inline-end: 10px;
+    font-weight: bolder;
+}
+
+.email-filter li:hover {
+    color: rgba(231, 10, 10, 0.801);
+    background-color: rgba(214, 24, 24, 0.123);
+    border-radius: 10px;
+}
+
+.email-filter span {
+   margin-left: 10px;
+}
