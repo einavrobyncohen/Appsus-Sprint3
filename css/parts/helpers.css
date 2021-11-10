@@ -1,3 +1,11 @@
 .app-main {
     height: 90vh;
 }
+
+.absolute {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+}

@@ -12,9 +12,9 @@ export default {
         <ul class="note-list">
             <li v-for="note in notes" :key="note.id" class="note-container" >
                 <keep-preview :note="note" />
-                <div>
+                <div class="flex">
                 <span>📌</span>
-                <input type="color"><span>🎨</span>
+               <div> <input type="color"><span class="absolute">🎨</span></div>
                 <span>📧</span>
                 <span>✍🏻</span>
                 <span @click="remove(note.id)">🗑</span>
