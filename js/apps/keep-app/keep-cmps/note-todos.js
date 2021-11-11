@@ -1,5 +1,5 @@
 export default {
-    props: ['note'],
+    props: ['note', 'isEdited'],
     template: `
 <section>
   <h1>{{note.info.label}}</h1>

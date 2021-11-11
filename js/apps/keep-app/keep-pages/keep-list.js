@@ -7,28 +7,31 @@ export default {
     template: `
     <section class="keep-list">
         <form @submit.prevent="add()" >
-        <div class="notes-box">
-            <input v-model="newNote.info.txt" type="text" placeholder="What\'s on your mind...">
-        <ul class="cmp-type"> <li>💭</li><li>🖼</li><li>🎞</li><li>♒</li></ul>
-    </div>
-</form>
-        <ul class="note-list" >
-            <li v-for="note in notes" :key="note.id" class="note-container">
-                <keep-preview :note="note"></keep-preview>
-                <ul class="tool-bar">
-                <li>📌</li>
-                <li @click="getColorsOptions(note.id)">🎨</li>
-                <li>📧</li>
-                <li @click="edit(note.id)">✍🏻</li>
-                <li @click="remove(note.id)">🗑</li>
+            <div class="notes-box">
+                <input v-model="newNote.info.txt" type="text" placeholder="What\'s on your mind...">
+                <ul class="cmp-type"> <li>💭</li><li>🖼</li><li>🎞</li><li>♒</li></ul>
+            </div>
+        </form>
+
+        <div>
+            <ul class="note-list" >
+                <li v-for="note in notes" :key="note.id" class="note-container">
+                    <keep-preview :isEdited="isEdited" :note="note"></keep-preview>
+                    <ul class="tool-bar">
+                        <li>📌</li>
+                        <li @click="getColorsOptions(note.id)">🎨</li>
+                        <li>📧</li>
+                        <li @click="edit(note.id)">✍🏻</li>
+                        <li @click="remove(note.id)">🗑</li>
+                    </ul> 
+                    <section class="colors" v-if="isColorOpen" >
+                        <section v-for="color in colors">
+                            <div class="note-color" :style="{backgroundColor: color.color}" @click="changeBcgColor(note.id, color)">.</div>
+                        </section>
+                    </section>
+                </li>
             </ul>
-            <section class="colors" v-if="isColorOpen">
-                                <section v-for="color in colors">
-                                    <div class="note-color" :style="{backgroundColor: color.color}" @click="changeBcgColor(note.id, color)">.</div>
-                                </section>
-                            </section>
-            </li>
-        </ul>
+        </div>
     </section>
     `,
     data() {
@@ -64,15 +67,18 @@ export default {
             console.log(this.newNote);
         },
         edit(noteId) {
-            if (noteId) {
-                keepService.getById(noteId)
-                    .then(note => {
-                        keepService.update(note)
-                            .then(() => {
-                                this.$emit('edited')
-                            })
-                    })
-            }
+            this.isEdited = !this.isEdited;
+            this.$emit('edited', noteId)
+                // if (noteId) {
+                //     keepService.getById(noteId)
+                //         .then(note => {
+                //             keepService.update(note)
+                //                 .then(() => {
+                //                     this.$emit('edited')
+                //                 })
+                //         })
+                // }
+            console.log('edit');
         },
         changeBcgColor(noteId, color) {
             keepService.getById(noteId)
@@ -86,8 +92,10 @@ export default {
                 })
         },
         getColorsOptions(noteId) {
-            this.isColorOpen = !this.isColorOpen
-        },
+            keepService.getById(noteId)
+                .then(() => this.isColorOpen = !this.isColorOpen)
+            console.log(noteId);
+        }
     },
     computed: {
         backgroundColor() {

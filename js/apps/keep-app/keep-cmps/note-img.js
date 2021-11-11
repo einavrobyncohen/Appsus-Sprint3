@@ -1,5 +1,5 @@
 export default {
-    props: ['note'],
+    props: ['note', 'isEdited'],
     template: `
 <section class="note-img">
   <img :src="note.info.url" alt="">

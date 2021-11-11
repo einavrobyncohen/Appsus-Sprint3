@@ -24,11 +24,18 @@ export default {
                     console.log(this.notes);
                 });
         },
-        changeBgcColor() {
 
-        },
-        editNote() {
-            this.loadNotes();
+        editNote(noteId) {
+            console.log('in keep-app', noteId);
+            keepService.getById(noteId)
+                .then(note => {
+                    keepService.update(note)
+                        // .then(() => {
+                        //     this.$emit('edited')
+                        // })
+                })
+                // this.loadNotes();
+                // console.log('edit');
         },
         added() {
             console.log('added');
