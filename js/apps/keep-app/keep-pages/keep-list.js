@@ -24,7 +24,7 @@ export default {
                         <li @click="edit(note.id)">✍🏻</li>
                         <li @click="remove(note.id)">🗑</li>
                     </ul> 
-                    <section class="colors" v-if="isColorOpen" >
+                    <section class="colors" v-if="isColorOpen">
                         <section v-for="color in colors">
                             <div class="note-color" :style="{backgroundColor: color.color}" @click="changeBcgColor(note.id, color)">.</div>
                         </section>

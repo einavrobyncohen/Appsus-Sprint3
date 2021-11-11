@@ -4,7 +4,7 @@ import noteTodos from "../keep-cmps/note-todos.js"
 export default {
     props: ['note', 'isEdited'],
     template: `
-<section class="keep-preview">>
+<section class="keep-preview">
     
     <component :note="note" :isEdited='isEdited' :is="note.type">
         
