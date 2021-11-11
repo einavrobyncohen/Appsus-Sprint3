@@ -1,5 +1,5 @@
-import { gmailService } from "../services/gmail-service.js"
 
+import {eventBus}  from '../../../services/event-bus-service.js'
 
 export default {
     template:`
@@ -32,8 +32,8 @@ export default {
     },
     methods: {
         sendEmail() {
-            gmailService.sendEmail(this.emptyEmail).then( () => console.log('here'))
             this.$emit('closeModal')
+            eventBus.$emit('emailSent', this.emptyEmail)
         }
     }
 

@@ -11,9 +11,18 @@ export const gmailService = {
     query,
     getEmailById,
     changeEmailToRead,
-    getUnreadEmails,
     sendEmail,
-    removeEmail
+    removeEmail,
+    getUnread
+}
+
+function getUnread() {
+    var emails = _createEmails() 
+    var counter=0;
+    for (var i=0; i<emails.length; i++) {
+        if (!emails[i].isRead && emails[i].to === 'user@appsus.com') counter++
+    }
+    return counter
 }
 
 
@@ -26,11 +35,6 @@ function sendEmail(email) {
     })
 }
 
-function getUnreadEmails() {
-   const lala= query().then(Promise.resolve(emails))
-   return lala
-   
-}
 
 function removeEmail(emailId) {
     return storageService.remove(EMAILS_KEY,emailId);
@@ -49,7 +53,6 @@ function changeEmailToRead(email) {
         return storageService.put(EMAILS_KEY, email)
 }
 
-
 function _createEmails() {
     let emails = utilService.loadFromStorage(EMAILS_KEY)
     if (!emails || !emails.length) {
@@ -58,7 +61,7 @@ function _createEmails() {
                 id: 'e101',
                 sender: 'Muki',
                 subject: 'This is just a random subject',
-                body: 'Would love to catch up sometimes, its been a while!',
+                body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam!',
                 isRead: false,
                 sentAt : 1636623867,
                 to: 'user@appsus.com',
@@ -68,7 +71,7 @@ function _createEmails() {
                 id: 'e102',
                 sender: 'Mahatma Appsus',
                 subject: 'Miss you!',
-                body: 'How are you? im so hungry what can i do im always eating',
+                body: 'dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam',
                 isRead: false,
                 sentAt : 1636382735,
                 to: 'momo@momo.com',
@@ -78,7 +81,7 @@ function _createEmails() {
                 id: 'e103',
                 sender: 'Shuki',
                 subject: 'Ani Aohevet Et Shlomo Artzi',
-                body: 'yesh li isha zot haima shlchaaaaaaaaaaaaa lalalalaa',
+                body: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos',
                 isRead: false,
                 sentAt : 1636299935,
                 to: 'user@appsus.com',
@@ -87,8 +90,8 @@ function _createEmails() {
             {
                 id: 'e104',
                 sender: 'Luki',
-                subject: 'BA LI PIZZA ZEITIM',
-                body: 'IM LECHEM SHUM, HARBEEEE GVINA IGLIDA',
+                subject: 'Ba Li Pizza Zeitim!',
+                body: 'ze kreiv moozar, aval ze ma shabali. vemi shlo tov lo, yom tov lo',
                 isRead: false,
                 sentAt : 1633707935,
                 to: 'user@appsus.com',
@@ -97,8 +100,8 @@ function _createEmails() {
             {
                 id: 'e105',
                 sender: 'Luki',
-                subject: 'BA LI PIZZA ZEITIM',
-                body: 'IM LECHEM SHUM, HARBEEEE GVINA IGLIDA',
+                subject: 'Contrary to popular belief..',
+                body: 'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, ',
                 isRead: false,
                 sentAt : 1636209935,
                 to: 'user@appsus.com',
