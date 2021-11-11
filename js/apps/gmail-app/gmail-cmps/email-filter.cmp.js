@@ -1,28 +1,54 @@
-import {eventBus} from '../../../services/event-bus-service.js'
+
+import emailCompose from '../gmail-cmps/email-compose.cmps.js'
+import emailFolders from '../gmail-cmps/email-folder-list.cmp.js'
 
 export default {
-    props: ['unread'],
+    components: {
+        emailCompose,
+        emailFolders
+
+    },
     template: `<section class="email-filter">
-        <ul>
-            <li>Inbox <span>{{notRead}}</span></li>
-            <li>Starred</li>
-            <li>Sent</li>
-            <li>Drafts</li>
-            <li>Trash</li>
-        </ul>
+        <form class="filtering">
+            <input class="filterby" @input="filter" v-model="filterBy.subject" placeholder="Search mail" />
+           Filter: <select @input="filter" v-model="filterBy.show">
+                <option>All</option>
+                <option>Read</option>
+                <option>Unread</option>
+            </select>
+
+            Sort: <select class="sortby" @input="sort($event)">
+                <option value="1">Date</option>
+                <option value="2">Subject</option>
+            </select>
+
+        </form>
+        <button class="compose-btn">
+            <p @click="isOpenCompose">compose</p>
+            <email-compose @closeModal="close()" v-if="openCompose"/>
+        </button>
     </section>`,
     data() {
         return{
-            notRead: this.unread
- 
+            openCompose: false,
+            filterBy: {
+                subject: '',
+                show: ''
+            }
         }
     },
-    created() {
-        eventBus.$on('read', this.read)
-    },
     methods: {
-        read() {
-            this.notRead--
+        isOpenCompose() {
+            this.openCompose = true
+        },
+        close() {
+            this.openCompose = false
+        },
+        filter() {
+            this.$emit('filtered', this.filterBy)
+        },
+        sort(event) {
+            this.$emit('sorted', +event.target.value)
         }
 
     },

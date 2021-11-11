@@ -1,7 +1,5 @@
-import { gmailService } from '../services/gmail-service.js'
-import {eventBus} from '../../../services/event-bus-service.js'
 import longText from '../../../cmps/long-text.cmp.js'
-
+import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
     props: ['email'],
@@ -10,7 +8,7 @@ export default {
     },
     template: `
     <section class="email-preview">
-        <div  class="email-modal-small" @click="showPreview(email)" :class="{read: email.isRead}">
+        <div  class="email-modal-small" @click="showPreview(email)">
             <p class="sender-small">{{email.sender}}</p>
             <p class="subject-small">{{email.subject}}</p>
             <long-text :txt="email.body" />
@@ -29,23 +27,15 @@ export default {
         return {
             isShowPreview: false,
         }
-
     },
     methods: {
         showPreview() {
-            if (!this.email.isRead)  eventBus.$emit('read')
-            gmailService.changeEmailToRead(this.email)
-                .then(() => {
-                    if (this.email.isRead) {
-                        this.isShowPreview = !this.isShowPreview
-                    
-                    }
-                })
+            this.isShowPreview = !this.isShowPreview
+            }
         },
         remove(emailId) {
             eventBus.$emit('remove', emailId)
-        }
-    },
+        },
     computed: {
         showDate() {
             let date = new Date(this.email.sentAt * 1000).toISOString().slice(0, 19).replace('T', ' ');

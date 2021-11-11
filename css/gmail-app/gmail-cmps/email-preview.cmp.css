@@ -1,9 +1,15 @@
 
 .email-preview {
+ 
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+}
+
+.email-preview ul {
+    margin-top: 100px;
+
 }
 
 
@@ -37,6 +43,7 @@
 /* after-click */
 
 .email-modal-medium {
+    position: relative;
     line-height: 1rem;
     padding-inline-start: 10px;
     display: flex;
@@ -63,6 +70,14 @@
 
 .body-medium {
     margin-left: 10px;
+}
+
+.remove-email {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px;
+   position: absolute;
+   right: 0;
 }
 
 /* helpers */

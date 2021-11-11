@@ -6,6 +6,8 @@
 @import "./gmail-app/gmail-cmps/email-filter.cmp.css";
 @import "./gmail-app/gmail-cmps/email-preview.cmp.css";
 @import "./gmail-app/gmail-cmps/mails-list.cmp.css";
+@import "./gmail-app/gmail-cmps/email-compose.cmp.css";
+@import "./gmail-app/gmail-cmps/email-folder-list.cmp.css";
 @import "./gmail-app/gmail-pages/gmail-app.css";
 @import "./keep-app/keep-cmps/keep-list.css";
 @import "./keep-app/keep-cmps/keep-preview.css";

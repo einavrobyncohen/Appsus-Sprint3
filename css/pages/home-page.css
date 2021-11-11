@@ -1,7 +1,7 @@
 
 .home-img {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url(/imgs/homepagephoto.png);
+    background-image: url(./imgs/homepagephoto.png);
     background-size: 1500px;
     height: 1150px;
     background-repeat: no-repeat;

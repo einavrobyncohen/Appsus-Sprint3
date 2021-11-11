@@ -1,0 +1,28 @@
+.email-folder-list  {
+    position: absolute;
+    top:165px;
+    left: 0;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    height: 70vh;
+    line-height: 2.5rem;
+}
+
+.email-folder-list ul {
+    list-style: none;
+}
+
+.email-folder-list li {
+    padding-inline-end: 10px;
+    font-weight: bolder;
+}
+
+.email-folder-list li:hover {
+    color: rgba(231, 10, 10, 0.801);
+    background-color: rgba(214, 24, 24, 0.123);
+    border-radius: 10px;
+}
+
+.email-folder-list span {
+   margin-left: 10px;
+}

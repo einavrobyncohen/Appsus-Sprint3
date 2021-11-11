@@ -1,6 +1,8 @@
+import { eventBus } from "../../../services/event-bus-service.js"
 import { gmailService } from "../services/gmail-service.js"
 import emailList from "../gmail-cmps/email-list.cmp.js"
 import emailFilter from "../gmail-cmps/email-filter.cmp.js"
+
 
 
 export default {
@@ -10,7 +12,7 @@ export default {
     },
 
     template:`<section class="gmail-app app-main">
-        <email-filter :unread="amountUnread"/>
+        <email-filter @filtered="setFilter" @sorted="setSort" :unread="amountUnread"/>
         <email-list :emails="emailsToShow"/>
     </section>`
     ,
@@ -19,12 +21,13 @@ export default {
         return {
             emails: null,
             filterBy: null,
-            amountUnread: 4
-
+            sortBy: null,
+            amountUnread: 5
         }
     },
     created() {
-        this.loadEmails()
+        this.loadEmails(),
+        eventBus.$on('remove' ,this.removeEmail)
         
     },
     methods: {
@@ -32,13 +35,51 @@ export default {
             gmailService.query()
                 .then(emails => {
                     this.emails = emails
-                })
+            })
+            
+        },
+        getUsers() {
+            console.log(users)
+
+        },
+        removeEmail(emailId) {
+            gmailService.removeEmail(emailId).then(
+                this.emails = this.emails.filter(email => email.id !== emailId)
+            )
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
+        },
+        setSort(num) {
+            this.sortBy = num
         }
     },
     computed: {
         emailsToShow() {
-            if (!this.filterBy) return this.emails
+            var emailsList;
+            if (this.sortBy === 2) {
+                emailsList= this.emails.sort((a, b) => (a.subject > b.subject) - (a.subject < b.subject))
 
+            } else if (this.sortBy === 1) {
+                emailsList= this.emails.sort((a, b) => (b.sentAt - a.sentAt))
+            }
+
+            else {
+                emailsList = this.emails
+            }
+            if (!this.filterBy) return this.emails
+            const searchStr = this.filterBy.subject.toLowerCase();
+            const emailsToShow = emailsList.filter( email => {
+                if (!this.filterBy.show || this.filterBy.show=== 'All') {
+                    return email.subject.toLowerCase().includes(searchStr) 
+                } else if(this.filterBy.show === 'Read') {
+                    return email.isRead && email.subject.toLowerCase().includes(searchStr) 
+                } else if(this.filterBy.show === 'Unread') {
+                    return !email.isRead && email.subject.toLowerCase().includes(searchStr) 
+                } 
+            })
+            return emailsToShow
         }
     }
 }
+
