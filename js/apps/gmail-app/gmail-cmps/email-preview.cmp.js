@@ -21,6 +21,8 @@ export default {
             <p class="from-medium">{{email.sender}}<span> <{{email.from}}></span></p>
             <p class="body-medium">{{email.body}}</p>
             <button class="remove-email" @click="remove(email.id)">🗑</button>
+            <router-link :to="'/keepApp/'+email.body" ><button class="keep-btn" @click="toKeep(email.body)">📝</button></router-link>
+            
         </div>
     </section>
 
@@ -47,6 +49,9 @@ export default {
         },
         remove(emailId) {
             eventBus.$emit('remove', emailId)
+        },
+        toKeep(emailBody) {
+            console.log(emailBody)
         }
     },
     computed: {

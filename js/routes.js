@@ -16,7 +16,7 @@ const routes = [
       component: aboutPage,
     },
     {
-      path: '/keepApp',
+      path: '/keepApp:email?',
       component: keepApp,
     },
     {

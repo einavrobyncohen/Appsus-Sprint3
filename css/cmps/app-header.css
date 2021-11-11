@@ -1,9 +1,10 @@
 .app-header {
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 5vh;
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(231, 180, 139, 0.884);
     cursor: pointer;
 }
 
@@ -11,7 +12,8 @@
     margin-right: 40px;
     width: 50px;
     height: 3vh;
-    background-color: rgb(131, 71, 180);
+    border-radius: 50%;
+    background-color: rgba(103, 138, 87, 0.445);
 
 }
 
