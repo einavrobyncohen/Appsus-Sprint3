@@ -1,15 +1,23 @@
+import noteTxt from "../keep-cmps/note-txt.js"
+import noteImg from "../keep-cmps/note-img.js"
+import noteTodos from "../keep-cmps/note-todos.js"
 export default {
     props: ['note'],
     template: `
-        <section class="keep-preview">
-            <h3>{{note.type}}</h3>
-            <p>{{note.info}}</p>
-</section>
+<section class="keep-preview">>
+    
+    <component :note="note" :is="note.type">
+        
+        </component>
+    </section>
     `,
     computed: {
 
-        currency() {
-
-        },
+    },
+    methods: {},
+    components: {
+        noteTxt,
+        noteImg,
+        noteTodos,
     }
 }

@@ -10,9 +10,9 @@ export const storageService = {
 
 function getBooksFromSearch(searchWord) {
     axios.get(`/v1/volumes?printType=books&q=${searchWord}`)
-    .then(res => {
-        console.log(res)
-    })
+        .then(res => {
+            console.log(res)
+        })
 }
 
 function query(entityType) {

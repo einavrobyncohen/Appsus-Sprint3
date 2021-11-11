@@ -1,15 +1,13 @@
 import { keepService } from '../services/keep-service.js';
-import keepList from '../keep-cmps/keep-list.js';
+import keepList from '../keep-pages/keep-list.js';
 
 export default {
     template: `
     <section class="app-main">
     <h1>Keep App</h1>
-    <keep-list :notes="notes" @remove="removeNote"></keep-list>
+    <keep-list :notes="notes" @changeColor="loadNotes" @edited="editNote" @remove="removeNote" @added="added"></keep-list>
     </section>
     `,
-
-
     data() {
         return {
             notes: null
@@ -25,6 +23,16 @@ export default {
                     this.notes = notes;
                     console.log(this.notes);
                 });
+        },
+        changeBgcColor() {
+
+        },
+        editNote() {
+            this.loadNotes();
+        },
+        added() {
+            console.log('added');
+            this.loadNotes()
         },
         removeNote(id) {
             keepService.remove(id)
@@ -45,6 +53,7 @@ export default {
                 //     eventBus.$emit('showMsg', msg);
                 // });
         },
+
     },
     computed: {},
     components: {
