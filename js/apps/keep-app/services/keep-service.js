@@ -4,10 +4,12 @@ import { storageService } from '../../../services/async-storage-service.js';
 const NOTES_KEY = 'notes';
 export const keepService = {
     query,
-    remove,
     save,
+    remove,
+    update,
     getById,
     getEmptyNote,
+    getColorsOption
 };
 
 const gNotes = [{
@@ -16,17 +18,20 @@ const gNotes = [{
         isPinned: true,
         info: {
             txt: "Fullstack Me Baby!"
+        },
+        style: {
+            backgroundColor: '#ffffff'
         }
     },
     {
         id: utilService.makeId(),
         type: "note-img",
         info: {
-            url: "http://some-img/me",
+            url: "https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__340.jpg",
             title: "Bobi and Me"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: '#ffffff'
         }
     },
     {
@@ -38,6 +43,9 @@ const gNotes = [{
                 { txt: "Driving liscence", doneAt: null },
                 { txt: "Coding power", doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: "#fefefe"
         }
     }
 ];
@@ -46,6 +54,23 @@ _createNotes();
 
 function query() {
     return storageService.query(NOTES_KEY);
+}
+
+function getColorsOption() {
+    return [
+        { color: '#f28b82' },
+        { color: '#fbbc04' },
+        { color: '#fff475' },
+        { color: '#ccff90' },
+        { color: '#a7ffeb' },
+        { color: '#cbf0f8' },
+        { color: '#aecbfa' },
+        { color: '#d7aefb' },
+        { color: '#fdcfe8' },
+        { color: '#e6c9a8' },
+        { color: '#e8eaed' },
+        { color: '#ffffff' },
+    ]
 }
 
 function remove(noteId) {
@@ -61,10 +86,20 @@ function getById(noteId) {
     return storageService.get(NOTES_KEY, noteId);
 }
 
+function update(note) {
+    return storageService.put(NOTES_KEY, note)
+}
+
 function getEmptyNote() {
     return {
-        id: storageService.makeId(),
-        type: '',
+        id: utilService.makeId(),
+        type: "note-txt",
+        info: {
+            txt: ''
+        },
+        style: {
+            backgroundColor: ''
+        }
     };
 }
 

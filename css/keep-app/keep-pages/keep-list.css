@@ -9,6 +9,18 @@
     padding: 10px;
 }
 
+.cmp-type,
+.tool-bar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cmp-type li {
+    padding: 10px;
+}
+
 .notes-box input {
     border: none;
 }
@@ -23,26 +35,31 @@
     justify-content: center;
 }
 
-.note-list span {
-    cursor: pointer;
-    right: 10px;
+.tool-bar li {
+    padding: 5px;
 }
 
 .note-container {
     padding: 5px;
     height: 200px;
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgba(247, 232, 232, 0.794);
+    /* background-color: rgba(247, 232, 232, 0.794); */
     text-align: center;
     color: rgb(37, 37, 37);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.note-container input {
-    opacity: 0;
-    z-index: 1;
-    position: relative;
+.colors {
+    display: flex;
+}
+
+.note-color {
+    width: 20px;
+}
+
+img {
+    width: 150px;
 }
