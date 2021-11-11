@@ -11,7 +11,7 @@ export default {
     template: `<section class="email-filter">
         <form class="filtering">
             <input class="filterby" @input="filter" v-model="filterBy.subject" placeholder="Search mail" />
-           Filter: <select @input="filter" v-model="filterBy.show">
+           Filter: <select class="chooseFilter" @input="filter" v-model="filterBy.show">
                 <option>All</option>
                 <option>Read</option>
                 <option>Unread</option>
@@ -24,7 +24,7 @@ export default {
 
         </form>
         <button class="compose-btn">
-            <p @click="isOpenCompose">compose</p>
+            <button  class="btn" @click="isOpenCompose"><img class="img" src="imgs/compose.png"></button>
             <email-compose @closeModal="close()" v-if="openCompose"/>
         </button>
     </section>`,

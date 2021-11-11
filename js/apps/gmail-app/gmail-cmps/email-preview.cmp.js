@@ -11,8 +11,8 @@ export default {
     template: `
     <section class="email-preview">
         <div  class="email-modal-small" @click="showPreview(email)" :class="{read: email.isRead}">
-            <p class="sender-small">{{email.sender}}</p>
-            <p class="subject-small">{{email.subject}}</p>
+            <div class="sender-small">{{email.sender}}</div>
+            <div class="subject-small">{{email.subject}}</div>
             <long-text :txt="email.body" />
             <p>{{showDate}}</p>
         </div>  
@@ -33,7 +33,10 @@ export default {
     },
     methods: {
         showPreview() {
-            if (!this.email.isRead)  eventBus.$emit('read')
+            if (!this.email.isRead) {
+                eventBus.$emit('read')
+
+            } 
             gmailService.changeEmailToRead(this.email)
                 .then(() => {
                     if (this.email.isRead) {

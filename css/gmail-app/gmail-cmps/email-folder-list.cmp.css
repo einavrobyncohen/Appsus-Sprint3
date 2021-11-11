@@ -1,19 +1,27 @@
 .email-folder-list  {
+    border-right: .3px solid rgb(211, 211, 211);
+    font-size: 14px;
     position: absolute;
-    top:165px;
-    left: 0;
-    margin-top: 10px;
+    width: 340px;
+    margin-left: -300px;
+    margin-top: 3vh;
     background-color: rgb(255, 255, 255);
-    height: 70vh;
-    line-height: 2.5rem;
+    height: 87vh;
+    line-height: 2rem;
+    letter-spacing: .04rem;
 }
 
 .email-folder-list ul {
+    margin: 0;
     list-style: none;
+}
+.email-folder-list li:first-of-type {
+    margin-top: 5px;
 }
 
 .email-folder-list li {
-    padding-inline-end: 10px;
+    cursor: pointer;
+    margin-left: 120px;
     font-weight: bolder;
 }
 
@@ -24,5 +32,5 @@
 }
 
 .email-folder-list span {
-   margin-left: 10px;
+   margin-left: 80px;
 }

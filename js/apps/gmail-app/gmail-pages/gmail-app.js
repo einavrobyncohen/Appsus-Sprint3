@@ -3,8 +3,6 @@ import { gmailService } from "../services/gmail-service.js"
 import emailList from "../gmail-cmps/email-list.cmp.js"
 import emailFilter from "../gmail-cmps/email-filter.cmp.js"
 
-
-
 export default {
     components: {
         emailList,
@@ -12,7 +10,7 @@ export default {
     },
 
     template:`<section class="gmail-app app-main">
-        <email-filter @filtered="setFilter" @sorted="setSort" :unread="amountUnread"/>
+        <email-filter @filtered="setFilter" @sorted="setSort"/>
         <email-list :emails="emailsToShow"/>
     </section>`
     ,
@@ -22,12 +20,12 @@ export default {
             emails: null,
             filterBy: null,
             sortBy: null,
-            amountUnread: 5
         }
     },
     created() {
         this.loadEmails(),
         eventBus.$on('remove' ,this.removeEmail)
+        eventBus.$on('emailSent', this.sentEmail)
         
     },
     methods: {
@@ -36,16 +34,14 @@ export default {
                 .then(emails => {
                     this.emails = emails
             })
-            
-        },
-        getUsers() {
-            console.log(users)
-
         },
         removeEmail(emailId) {
             gmailService.removeEmail(emailId).then(
                 this.emails = this.emails.filter(email => email.id !== emailId)
             )
+        },
+        sentEmail(emptyEmail) {
+            gmailService.sendEmail(emptyEmail).then(()=> this.loadEmails())
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
