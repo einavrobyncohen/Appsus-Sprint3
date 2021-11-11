@@ -7,10 +7,14 @@ export default {
     template: `
     <section class="keep-list">
         <form @submit.prevent="add()" >
+            <!--  // --v-if="!isFromGmail"> -->
             <div class="notes-box">
                 <input v-model="newNote.info.txt" type="text" placeholder="What\'s on your mind...">
                 <ul class="cmp-type"> <li>💭</li><li>🖼</li><li>🎞</li><li>♒</li></ul>
             </div>
+
+            <!-- v-if="isFromGmail" -->
+
         </form>
 
         <div>
@@ -48,6 +52,10 @@ export default {
             isColorOpen: false,
         };
     },
+    created() {
+        console.log(this.$route.params)
+
+    },
     methods: {
         remove(noteId) {
             this.$emit('remove', noteId);
@@ -65,6 +73,11 @@ export default {
                     this.$emit('added')
                 });
             console.log(this.newNote);
+        },
+        getNoteFromEmail() {
+
+            this.add()
+
         },
         edit(noteId) {
             this.isEdited = !this.isEdited;
@@ -104,5 +117,13 @@ export default {
     },
     components: {
         keepPreview
+    },
+    watch: {
+        '$route.params.email': {
+            handler() {
+                const { email } = this.$route.params;
+                console.log(email)
+            }
+        }
     }
 };

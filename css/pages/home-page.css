@@ -1,27 +1,43 @@
 
 .home-img {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url(./imgs/homepagephoto.png);
-    background-size: 1500px;
-    height: 1150px;
+    position: relative;
+    margin: 0 auto;
+    width: 1500px;
+    height: 1500px;
+    background-image: url(/imgs/home.jpeg);
     background-repeat: no-repeat;
+    background-size: 1500px;
+}
+
+.home-img .headings{
+    top: 300px;
+    left: 650px;
+    position: absolute;
     display: flex;
-    align-items: flex-end;
-    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.home-img .header{
+    color: rgba(255, 255, 255, 0.904);
+    font-size: 100px;
+    display: flex;
     justify-content: center;
-    line-height: 4.5rem;
-    letter-spacing: 0.2rem;
-    
+    align-items: center;
+    padding: 20px;
+    margin:0;
+    text-align: center;
 }
 
-
-.home-img h1 {
-    margin: 0;
-    font-size: 3.75rem;
+.home-img .first-desc {
+    font-style: italic ;
+    color: rgba(212, 136, 105, 0.815);
+    text-align: center;
 }
 
-.home-img h2 {
-    margin: 0;
-    font-size: 40px;
+.home-img .second-desc {
+    color: rgba(202, 112, 85, 0.815);
+    font-style: italic ;
+    text-align: center;
 }
-
