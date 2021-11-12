@@ -2,14 +2,17 @@ import { eventBus } from "../../../services/event-bus-service.js"
 import { gmailService } from "../services/gmail-service.js"
 import emailList from "../gmail-cmps/email-list.cmp.js"
 import emailFilter from "../gmail-cmps/email-filter.cmp.js"
+import emailFolderList from "../gmail-cmps/email-folder-list.cmp.js"
 
 export default {
     components: {
         emailList,
-        emailFilter
+        emailFilter,
+        emailFolderList
     },
 
     template:`<section class="gmail-app app-main">
+        <email-folder-list />
         <email-filter @filtered="setFilter" @sorted="setSort"/>
         <email-list :emails="emailsToShow"/>
     </section>`

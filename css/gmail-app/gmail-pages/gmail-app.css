@@ -1,9 +1,42 @@
+/* TYPOGRAPHY */
+
+
+@font-face {
+    font-family: manrope-l;
+    src: url(/fonts/Manrope-Light.ttf);
+}
+
+@font-face {
+    font-family:  manrope-m;
+    src: url(/fonts/Manrope-Medium.ttf);
+}
+
+@font-face {
+    font-family: manrope-r;
+    src: url(/fonts/Manrope-Regular.ttf);
+}
+
+
+
 .gmail-app h1 {
     margin: 0;
 }
 
 .gmail-app {
-    margin: 0;
+    font-family: manrope-r;
     display: flex;
-    justify-content: center;
+}
+
+.gmail-app ul {
+    padding: 0;
+    flex-direction: column;
+    list-style: none;
+}
+
+.gmail-app li {
+    padding: 0;
+}
+
+.main-content {
+    height: 90vh;
 }

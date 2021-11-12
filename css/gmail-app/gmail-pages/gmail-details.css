@@ -1,0 +1,104 @@
+
+.gmail-details h1 {
+    margin: 0;
+}
+
+.gmail-details {
+    font-family: manrope-m;
+    line-height: 1.5rem;
+    color: rgb(48, 48, 48);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.mail-content {
+    overflow:hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 550px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.mail-content > img {
+    cursor: pointer;
+    width: 25px;
+    opacity: 0.6;
+}
+
+.mail-content > img:hover {
+    background-color: rgb(204, 202, 202);
+    border-radius: 40px;
+ 
+}
+
+.gmail-details img:first-of-type{
+    top: 5px;
+    right: 5px;
+    position: absolute;
+}
+
+.gmail-details img:nth-of-type(2){
+    top: 5px;
+    right: 40px;
+    position: absolute;
+}
+
+.date {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-size: 13px;
+    color: rgb(155, 154, 154);
+    font-style: italic;
+}
+
+.subject {
+    margin-bottom: 10px;
+    padding-top: 55px;
+    font-size: 25px;
+
+}
+
+.sender {
+    background-color: rgba(189, 189, 189, 0.822);
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.from {
+    font-size: 15px;
+    color: rgb(85, 85, 85);
+}
+
+.sender-details {
+    color: white;
+    font-family: manrope-l;
+    background-color: rgb(224, 247, 191);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    width: 85%;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1rem;
+    
+}
+
+.body {
+    overflow-wrap: break-word;
+    font-family: manrope-l;
+    border-top: 1px solid gray;
+    font-size: 15px;
+    padding-top: 40px;
+    width: 450px;
+    letter-spacing: 0.05rem;
+    margin-left: 45px;
+    align-self: flex-start;
+}

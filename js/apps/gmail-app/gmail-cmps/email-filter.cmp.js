@@ -1,54 +1,51 @@
 
-import emailCompose from '../gmail-cmps/email-compose.cmps.js'
+
 import emailFolders from '../gmail-cmps/email-folder-list.cmp.js'
 
 export default {
     components: {
-        emailCompose,
         emailFolders
 
     },
     template: `<section class="email-filter">
         <form class="filtering">
             <input class="filterby" @input="filter" v-model="filterBy.subject" placeholder="Search mail" />
-           Filter: <select class="chooseFilter" @input="filter" v-model="filterBy.show">
+            <img  class="search-img" src="imgs/search.png">
+            <img @click="openMoreOptions" class="filter-img" src="imgs/filter.png">
+            <div v-if="isShowOptions" class="more-options">
+                <img  class="options-img" src="imgs/filter 2.png">
+            <select class="chooseFilter" @input="filter" v-model="filterBy.show">
                 <option>All</option>
                 <option>Read</option>
                 <option>Unread</option>
             </select>
-
-            Sort: <select class="sortby" @input="sort($event)">
+                <img class="options-img" src="imgs/sort.png">
+            <select class="sortby" @input="sort($event)">
                 <option value="1">Date</option>
                 <option value="2">Subject</option>
-            </select>
-
+                </select>
+            </div>
         </form>
-        <button class="compose-btn">
-            <button  class="btn" @click="isOpenCompose"><img class="img" src="imgs/compose.png"></button>
-            <email-compose @closeModal="close()" v-if="openCompose"/>
-        </button>
     </section>`,
     data() {
         return{
-            openCompose: false,
             filterBy: {
                 subject: '',
                 show: ''
-            }
+            },
+            isShowOptions: false
         }
     },
     methods: {
-        isOpenCompose() {
-            this.openCompose = true
-        },
-        close() {
-            this.openCompose = false
-        },
+
         filter() {
             this.$emit('filtered', this.filterBy)
         },
         sort(event) {
             this.$emit('sorted', +event.target.value)
+        },
+        openMoreOptions() {
+            this.isShowOptions = !this.isShowOptions
         }
 
     },

@@ -1,11 +1,31 @@
 
-.emails-list {
-    margin: 0 auto;
-
+.emails-list .list {
+    margin-top: 80px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: -100px;
+    height: 80%;
+    overflow:scroll;
+    overflow-x:hidden;
+   
 }
 
 
-.emails-list li{
-    list-style: none;
+
+.list::-webkit-scrollbar-thumb {
+    background: linear-gradient(to left, #30bb72, #0f9bb3);
+    border-radius: 5px;
+    height: 5px;
+}
+
+.side-bar >* {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+
+.emails-list >* li {
+    padding: 0;
 }
 

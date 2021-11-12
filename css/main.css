@@ -12,6 +12,7 @@
 @import "./gmail-app/gmail-cmps/email-compose.cmp.css";
 @import "./gmail-app/gmail-cmps/email-folder-list.cmp.css";
 @import "./gmail-app/gmail-pages/gmail-app.css";
+@import "./gmail-app/gmail-pages/gmail-details.css";
 @import "./keep-app/keep-pages/keep-list.css";
 @import "./keep-app/keep-cmps/keep-preview.css";
 @import "./keep-app/keep-pages/keep-app.css";
@@ -25,6 +26,8 @@ html {
     font-weight: lighter;
 }
 
+
 body {
     margin: 0;
 }
+

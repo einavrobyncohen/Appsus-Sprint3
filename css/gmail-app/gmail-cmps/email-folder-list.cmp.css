@@ -1,36 +1,78 @@
-.email-folder-list  {
-    border-right: .3px solid rgb(211, 211, 211);
-    font-size: 14px;
+.email-folder-list{
+    border-right: .5px solid rgb(224, 224, 224);
+    padding-inline-start: 15px;
+    padding-top: 16px;
+}
+
+.compose-img{
+    margin-left: 6px;
+    top: 15%;
+    left: 2px;
     position: absolute;
-    width: 340px;
-    margin-left: -300px;
-    margin-top: 3vh;
-    background-color: rgb(255, 255, 255);
-    height: 87vh;
-    line-height: 2rem;
-    letter-spacing: .04rem;
-}
+    width: 25px;
 
-.email-folder-list ul {
-    margin: 0;
-    list-style: none;
 }
-.email-folder-list li:first-of-type {
-    margin-top: 5px;
-}
-
-.email-folder-list li {
+.compose-btn{
+    font-family: manrope-m;
     cursor: pointer;
-    margin-left: 120px;
-    font-weight: bolder;
+    border:none;
+    padding: 13px;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    position: relative;
+
 }
 
-.email-folder-list li:hover {
-    color: rgba(231, 10, 10, 0.801);
-    background-color: rgba(214, 24, 24, 0.123);
-    border-radius: 10px;
+.compose-btn:hover {
+    transition: .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 }
 
-.email-folder-list span {
-   margin-left: 80px;
+.compose-btn .span {
+    margin-left:10px;
+}
+
+.side-bar >:hover {
+    cursor:pointer;
+    transition: .2s;
+    background: rgba(250, 5, 99, 0.062);
+    border-end-end-radius:10px ;
+    border-end-start-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: red;
+}
+
+.side-bar button {
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+    color: rgb(61, 61, 61);
+    margin-top: 20px;
+    padding-bottom: 3px;
+
+}
+
+.side-bar span {
+    margin-left: 60px;
+    margin-right: 10px;
+}
+
+.side-bar {
+    padding-bottom: 3px;
+    font-size: 13px;
+    color: rgb(61, 61, 61);
+    margin-top: 25px;
+}
+
+.folder-icons {
+    opacity: 0.7;
+    margin-top: 2px;
+    width: 15px;
+    margin-inline-end: 20px;
+    margin-inline-start: -10px;
 }
