@@ -1,0 +1,15 @@
+.note-txt {
+    height: 150px;
+    text-align: center;
+}
+
+.note-txt input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.note-txt h1 {
+    font-size: 1.25rem;
+}

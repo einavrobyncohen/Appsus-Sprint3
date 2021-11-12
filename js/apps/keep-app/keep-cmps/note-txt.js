@@ -3,11 +3,20 @@ export default {
     template: `
 <section class="note-txt">
 <h1 v-if="!isEdited">{{note.info.txt}}</h1>
+
 <input type="text" v-if="isEdited" v-model="note.info.txt">
-    <!-- <textarea v-if="isEdited" v-model="note.info.txt" name="" id="" cols="20" rows="3">{{note.info.txt}}</textarea> -->
+
 </section>
     `,
+    created() {},
     computed: {
+
+    },
+    methods: {
+        // changeColor(color) {
+        //     this.$emit('changeColor', this.note.id, color)
+        //     console.log(color);
+        // }
 
     }
 }

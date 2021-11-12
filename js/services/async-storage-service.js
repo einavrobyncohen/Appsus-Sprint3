@@ -5,6 +5,7 @@ export const storageService = {
     put,
     remove,
     postMany,
+    pushNote,
     getBooksFromSearch
 }
 
@@ -44,10 +45,21 @@ function postMany(entityType, newEntities) {
         })
 }
 
+
+function pushNote(entityType, newEntity) {
+    newEntity.id = _makeId()
+    return query(entityType)
+        .then(entities => {
+            entities.unshift(newEntity);
+            _save(entityType, entities);
+            return newEntity;
+        })
+}
+
 function put(entityType, updatedEntity) {
     return query(entityType)
         .then(entities => {
-            const idx = entities.findIndex(entity =>{
+            const idx = entities.findIndex(entity => {
                 return entity.id === updatedEntity.id
             });
             entities.splice(idx, 1, updatedEntity)

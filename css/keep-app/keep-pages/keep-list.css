@@ -1,3 +1,13 @@
+.note-list {
+    margin: 30px 0 0;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
 .notes-box {
     display: flex;
     justify-content: space-between;
@@ -7,6 +17,13 @@
     height: 50px;
     width: 700px;
     padding: 10px;
+    font-size: 1.2rem;
+}
+
+.keep-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .cmp-type,
@@ -15,6 +32,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: center;
 }
 
 .cmp-type li {
@@ -23,16 +41,14 @@
 
 .notes-box input {
     border: none;
+    outline: none;
+    width: 400px;
+    font-size: 1.2rem;
 }
 
-.note-list {
-    margin: 30px 0 0;
-    padding: 20px;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.tool-bar {
+    padding: 0;
+    font-size: 1.25rem;
 }
 
 .tool-bar li {
@@ -43,24 +59,8 @@
     padding: 5px;
     height: 200px;
     width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* background-color: rgba(247, 232, 232, 0.794); */
-    text-align: center;
+    /* background-color: rgba(247, 232, 232, 0.726); */
     color: rgb(37, 37, 37);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.colors {
-    display: flex;
-}
-
-.note-color {
-    width: 20px;
-    color: transparent;
-}
-
-img {
-    width: 150px;
+    border-radius: 30px;
 }
