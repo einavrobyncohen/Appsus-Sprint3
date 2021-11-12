@@ -1,0 +1,13 @@
+.note-img {
+    height: 150px;
+    text-align: center;
+}
+
+.note-img img {
+    width: 150px;
+}
+
+.note-img h1 {
+    font-size: 1.25rem;
+    margin: 5px 0 0;
+}

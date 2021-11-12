@@ -1,0 +1,20 @@
+.edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.note-color {
+    width: 20px;
+    color: transparent;
+    border: 0.3px solid rgb(54, 54, 54);
+}

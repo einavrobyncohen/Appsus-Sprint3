@@ -4,8 +4,7 @@ import keepList from '../keep-pages/keep-list.js';
 export default {
     template: `
     <section class="app-main">
-    <h1>Keep App</h1>
-    <keep-list :notes="notes" @changeColor="loadNotes" @edited="editNote" @remove="removeNote" @added="added"></keep-list>
+    <keep-list :notes="notes" @changeColor="changeColor" @editNote="editNote" @remove="removeNote" @add="add"></keep-list>
     </section>
     `,
     data() {
@@ -21,25 +20,33 @@ export default {
             keepService.query()
                 .then(notes => {
                     this.notes = notes;
-                    console.log(this.notes);
                 });
         },
+        changeColor(noteId, color) {
 
-        editNote(noteId) {
-            console.log('in keep-app', noteId);
             keepService.getById(noteId)
                 .then(note => {
+                    note.style.backgroundColor = color
                     keepService.update(note)
-                        // .then(() => {
-                        //     this.$emit('edited')
-                        // })
+                        .then(() => {
+                            this.loadNotes();
+                        })
                 })
-                // this.loadNotes();
-                // console.log('edit');
         },
-        added() {
-            console.log('added');
-            this.loadNotes()
+
+        editNote(note) {
+            keepService.update(note)
+                .then(() => {
+                    this.loadNotes();
+                })
+
+        },
+        add(newNote) {
+            keepService.save(newNote)
+                .then(() => {
+
+                    this.loadNotes()
+                })
         },
         removeNote(id) {
             keepService.remove(id)

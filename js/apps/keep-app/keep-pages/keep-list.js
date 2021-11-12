@@ -1,38 +1,38 @@
-import { keepService } from '../services/keep-service.js';
-import { utilService } from '../../../services/util-service.js';
 import keepPreview from '../keep-cmps/keep-preview.js';
+import keepAdd from '../keep-cmps/keep-add.js';
 
 export default {
     props: ['notes'],
     template: `
     <section class="keep-list">
-        <form @submit.prevent="add()" >
+        <keep-add @add="add"></keep-add>
+        <!-- <form @submit.prevent="add()" > -->
             <!--  // --v-if="!isFromGmail"> -->
-            <div class="notes-box">
+            <!-- <div class="notes-box">
                 <input v-model="newNote.info.txt" type="text" placeholder="What\'s on your mind...">
                 <ul class="cmp-type"> <li>💭</li><li>🖼</li><li>🎞</li><li>♒</li></ul>
-            </div>
+            </div> -->
 
             <!-- v-if="isFromGmail" -->
 
-        </form>
+        <!-- </form> -->
 
         <div>
             <ul class="note-list" >
-                <li v-for="note in notes" :key="note.id" class="note-container">
-                    <keep-preview :isEdited="isEdited" :note="note"></keep-preview>
-                    <ul class="tool-bar">
+                <li v-for="note in notes"  :key="note.id" class="note-container" :style="{backgroundColor: note.style.backgroundColor}">
+                    <keep-preview @editNote="editNote" :note="note" @remove="remove" @changeColor="changeColor"></keep-preview>
+                    <!-- <ul class="tool-bar">
                         <li>📌</li>
-                        <li @click="getColorsOptions(note.id)">🎨</li>
+                        <li @click="isColorOpen=!isColorOpen">🎨</li>
                         <li>📧</li>
                         <li @click="edit(note.id)">✍🏻</li>
                         <li @click="remove(note.id)">🗑</li>
-                    </ul> 
-                    <section class="colors" v-if="isColorOpen" >
+                    </ul>  -->
+                    <!-- <section class="colors" v-if="isColorOpen">
                         <section v-for="color in colors">
-                            <div class="note-color" :style="{backgroundColor: color.color}" @click="changeBcgColor(note.id, color)">.</div>
+                            <div class="note-color" :style="{backgroundColor: color.color}" @click="changeColor(note.id, color)">.</div>
                         </section>
-                    </section>
+                    </section> -->
                 </li>
             </ul>
         </div>
@@ -40,16 +40,19 @@ export default {
     `,
     data() {
         return {
-            newNote: {
-                id: '',
-                type: "note-txt",
-                info: {
-                    txt: ''
-                },
-            },
-            isEdited: false,
-            colors: keepService.getColorsOption(),
-            isColorOpen: false,
+            // newNote: {
+            //     id: '',
+            //     type: "note-txt",
+            //     info: {
+            //         txt: ''
+            //     },
+            //     style: {
+            //         backgroundColor: '#cbf0f8'
+            //     }
+            // },
+            // isEdited: false,
+            // colors: keepService.getColorsOption(),
+            // isColorOpen: false,
         };
     },
     created() {
@@ -57,66 +60,77 @@ export default {
 
     },
     methods: {
+        // remove(noteId) {
+        //     this.$emit('remove', noteId);
+        // },
+        add(newNote) {
+            this.$emit('add', newNote)
+        },
+        //     const newNote = {
+        //         id: '',
+        //         type: "note-txt",
+        //         info: {
+        //             txt: ''
+        //         },
+        //         style: {
+        //             backgroundColor: '#cbf0f8'
+        //         }
+        //     }
+        //     this.newNote = newNote
+        // },
+        editNote(note) {
+            console.log('edit-list');
+            this.$emit('editNote', note)
+        },
         remove(noteId) {
             this.$emit('remove', noteId);
-        },
-        add() {
-            keepService.save(this.newNote)
-                .then(note => {
-                    this.newNote = {
-                        id: '',
-                        type: "note-txt",
-                        info: {
-                            txt: ''
-                        },
-                    }
-                    this.$emit('added')
-                });
-            console.log(this.newNote);
         },
         getNoteFromEmail() {
 
             this.add()
 
         },
-        edit(noteId) {
-            this.isEdited = !this.isEdited;
-            this.$emit('edited', noteId)
-                // if (noteId) {
-                //     keepService.getById(noteId)
-                //         .then(note => {
-                //             keepService.update(note)
-                //                 .then(() => {
-                //                     this.$emit('edited')
-                //                 })
-                //         })
-                // }
-            console.log('edit');
+        // edit(noteId) {
+        //     this.isEdited = !this.isEdited;
+        //     this.$emit('edited', noteId)
+        //         // if (noteId) {
+        //         //     keepService.getById(noteId)
+        //         //         .then(note => {
+        //         //             keepService.update(note)
+        //         //                 .then(() => {
+        //         //                     this.$emit('edited')
+        //         //                 })
+        //         //         })
+        //         // }
+        //     console.log('edit');
+        // },
+        changeColor(noteId, color) {
+            this.$emit('changeColor', noteId, color)
+            this.isColorOpen = false
+                // keepService.getById(noteId)
+                //     .then(note => {
+                //         console.log(note);
+                //         this.isColorOpen = false
+                //         note.style.backgroundColor = color
+                //         console.log(color);
+                //         keepService.update(note)
+                //             .then(() => this.$emit('changeColor', color))
+                //     })
         },
-        changeBcgColor(noteId, color) {
-            keepService.getById(noteId)
-                .then(note => {
-                    console.log(note);
-                    this.isColorOpen = false
-                    note.style.backgroundColor = color
-                    console.log(color);
-                    keepService.update(note)
-                        .then(() => this.$emit('changeColor'))
-                })
-        },
-        getColorsOptions(noteId) {
-            keepService.getById(noteId)
-                .then(() => this.isColorOpen = !this.isColorOpen)
-            console.log(noteId);
+        getColorsOptions() {
+
+
+            this.isColorOpen = !this.isColorOpen
         }
     },
-    computed: {
-        backgroundColor() {
-            return note.style.backgroundColor
-        },
-    },
+    // computed: {
+    //     backgroundColor() {
+    //         return note.style.backgroundColor
+    //     },
+    // },
     components: {
-        keepPreview
+        keepPreview,
+        keepAdd
     },
     watch: {
         '$route.params.email': {

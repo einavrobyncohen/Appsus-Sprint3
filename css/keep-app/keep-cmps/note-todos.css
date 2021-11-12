@@ -1,0 +1,9 @@
+.note-todos {
+    height: 150px;
+}
+
+.note-todos h1 {
+    font-size: 1.25rem;
+    margin: 20px 0 10px;
+    text-align: center;
+}

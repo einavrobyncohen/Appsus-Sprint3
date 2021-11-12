@@ -20,7 +20,7 @@ const gNotes = [{
             txt: "Fullstack Me Baby!"
         },
         style: {
-            backgroundColor: '#ffffff'
+            backgroundColor: 'lightpink'
         }
     },
     {
@@ -31,7 +31,7 @@ const gNotes = [{
             title: "Bobi and Me"
         },
         style: {
-            backgroundColor: '#ffffff'
+            backgroundColor: 'lavender'
         }
     },
     {
@@ -45,7 +45,7 @@ const gNotes = [{
             ]
         },
         style: {
-            backgroundColor: "#fefefe"
+            backgroundColor: 'lightblue'
         }
     }
 ];
@@ -79,7 +79,7 @@ function remove(noteId) {
 
 function save(note) {
     if (note.id) return storageService.put(NOTES_KEY, note);
-    else return storageService.post(NOTES_KEY, note);
+    else return storageService.pushNote(NOTES_KEY, note);
 }
 
 function getById(noteId) {
