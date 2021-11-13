@@ -1,50 +1,12 @@
-.email-folder-list{
-    border-right: .5px solid rgb(224, 224, 224);
-    padding-inline-start: 15px;
-    padding-top: 16px;
-}
-
-.compose-img{
-    margin-left: 6px;
-    top: 15%;
-    left: 2px;
-    position: absolute;
-    width: 25px;
-
-}
-.compose-btn{
-    font-family: manrope-m;
-    cursor: pointer;
-    border:none;
-    padding: 13px;
-    padding-inline-start: 30px;
-    padding-inline-end: 30px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    position: relative;
-
-}
 
 .compose-btn:hover {
     transition: .2s;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-}
-
-.compose-btn .span {
-    margin-left:10px;
 }
 
 .side-bar >:hover {
     cursor:pointer;
     transition: .2s;
-    background: rgba(250, 5, 99, 0.062);
-    border-end-end-radius:10px ;
-    border-end-start-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    color: red;
 }
 
 .side-bar button {
@@ -57,22 +19,274 @@
 
 }
 
-.side-bar span {
-    margin-left: 60px;
-    margin-right: 10px;
-}
-
-.side-bar {
-    padding-bottom: 3px;
-    font-size: 13px;
-    color: rgb(61, 61, 61);
-    margin-top: 25px;
-}
-
 .folder-icons {
     opacity: 0.7;
     margin-top: 2px;
     width: 15px;
     margin-inline-end: 20px;
     margin-inline-start: -10px;
+}
+
+
+@media (max-width: 460px) {
+
+    .nav-bar.hiddennav{ 
+        transform: translateX(-200%);
+        transition: .3s;
+    }
+
+
+    .nav-bar.shownnav {
+        position: absolute;
+        width: 150px;
+        z-index: 1;
+        height: 82vh;
+        background-color: rgba(255, 255, 255, 0.897);
+        transform: translateX(0);
+        transition: .3s;
+    }
+    .hamburger {
+        position: absolute;
+        z-index: 1;
+        top: 64px;
+        margin-left: 15px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .nav-bar >* {
+        margin-top: 10px;
+  
+        padding-inline-start: 15px;
+        cursor: pointer;
+        text-align: left;
+        margin-bottom: 20px;
+        border-bottom: .5px solid rgba(167, 166, 164, 0.541);
+    }
+
+    .nav-bar >*:hover {
+        cursor: pointer;
+        background-color: rgba(197, 197, 197, 0.733);
+       
+    }
+
+    .compose-img{
+        margin-left: 6px;
+        top: 15%;
+        left: 2px;
+        position: absolute;
+        width: 25px;
+    
+    }
+
+    .compose-btn{
+        font-family: manrope-m;
+        cursor: pointer;
+        border:none;
+        padding: 13px;
+        padding-inline-start: 30px;
+        padding-inline-end: 30px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        position: relative;
+    
+    }
+
+    .compose-btn .span {
+        margin-left:10px;
+    }
+    .hamburger {
+        opacity: 0.7;
+        font-size: 15px;
+        position: absolute;
+        z-index: 1;
+        top: -36px;
+        margin-left: 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .mobile-nav {
+        background-color: white;
+        margin-left: 10px;
+        margin-top: 60px;
+        position: absolute;
+
+    }
+
+    .compose-btn-small{
+        z-index: 1;
+        font-family: manrope-m;
+        cursor: pointer;
+        border:none;
+        right: 15px;
+        bottom: 60px;
+        padding: 13px;
+        border-radius: 50px;
+        background-color: rgb(255, 205, 3);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        position: fixed;
+    
+    }
+
+    .compose-btn-small {
+        margin-left:10px;
+    }
+
+    .span >img{
+        width: 30px;
+        height: 30px;
+    }
+
+
+}
+
+
+@media (min-width: 460px) and (max-width: 730px) {
+
+    .nav-bar.hiddennav{ 
+        transform: translateX(-200%);
+        transition: .3s;
+    }
+
+    .compose-img{
+        margin-left: 6px;
+        top: 15%;
+        left: 2px;
+        position: absolute;
+        width: 25px;
+    
+    }
+
+    .nav-bar.shownnav {
+        width: 120px;
+        height: 70vh;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.945);
+        transform: translateX(0);
+        transition: .3s;
+    }
+    .hamburger {
+        opacity: 0.7;
+        font-size: 15px;
+        position: absolute;
+        z-index: 1;
+        top: -36px;
+        margin-left: 20px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .mobile-nav {
+        font-size: 13px;
+        z-index: 1;
+
+        margin-top: 60px;
+        position: absolute;
+    }
+
+    .nav-bar >* {
+        margin-top: 10px;
+  
+        padding-inline-start: 15px;
+        cursor: pointer;
+        text-align: left;
+        margin-bottom: 20px;
+        border-bottom: .5px solid rgba(167, 166, 164, 0.541);
+    }
+
+    .nav-bar >*:hover {
+        cursor: pointer;
+        background-color: rgba(197, 197, 197, 0.733);
+       
+    }
+
+    .compose-btn-small{
+        z-index: 1;
+        font-family: manrope-m;
+        cursor: pointer;
+        border:none;
+        right: 15px;
+        bottom: 60px;
+        padding: 13px;
+        border-radius: 50px;
+        background-color: rgb(255, 205, 3);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        position: fixed;
+    
+    }
+
+    .compose-btn-small {
+        margin-left:10px;
+    }
+
+    .span >img{
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+@media (min-width: 730px) {
+
+    .email-folder-list { 
+        padding-inline-start: 15px;
+        padding-top: 16px;
+        border-right: .5px solid rgb(224, 224, 224);
+    }
+    .compose-img{
+        margin-left: 6px;
+        top: 15%;
+        left: 2px;
+        position: absolute;
+        width: 25px;
+    
+    }
+
+    .compose-btn{
+        font-family: manrope-m;
+        cursor: pointer;
+        border:none;
+        padding: 13px;
+        padding-inline-start: 30px;
+        padding-inline-end: 30px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        position: relative;
+    
+    }
+
+    .compose-btn .span {
+        margin-left:10px;
+    }
+
+    .side-bar >:hover {
+        background: rgba(250, 5, 99, 0.062);
+        border-end-end-radius:10px ;
+        border-end-start-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        color: red;
+    }
+    .side-bar span {
+        margin-left: 60px;
+        margin-right: 10px;
+    }
+    .side-bar {
+        padding-bottom: 3px;
+        font-size: 13px;
+        color: rgb(61, 61, 61);
+        margin-top: 25px;
+    }
+
+
+    .side-bar >* {
+        margin-top: 5px;
+        margin-left: 20px;
+}
+
+
 }

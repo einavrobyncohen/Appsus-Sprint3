@@ -1,6 +1,6 @@
 
 export default {
     template:`<section class="footer">
-        <h1>©️ Coffee Rights</h1>
+        <div class="copyright">©️ Coffee Rights</div>
     </section>`
 }

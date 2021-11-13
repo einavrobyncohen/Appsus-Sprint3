@@ -1,7 +1,6 @@
-import { gmailService } from '../services/gmail-service.js'
-import {eventBus} from '../../../services/event-bus-service.js'
 import longText from '../../../cmps/long-text.cmp.js'
-
+import { eventBus } from '../../../services/event-bus-service.js'
+import { gmailService } from '../services/gmail-service.js'
 
 export default {
     props: ['email'],
@@ -10,7 +9,6 @@ export default {
     },
     template: `
     <section class="email-preview">
-
     <div  v-if="!isMobileMode" class="non-mobile">
         <div  class="email-modal-small" @click="showPreview(email)" :class="{read: email.isRead}" @mouseover="isHover = true" @mouseleave="isHover = false">
             <div v-if="!email.isStarred" @click.stop="star" ><img class="star-img" src="imgs/star-before.png"></div>
@@ -41,10 +39,8 @@ export default {
             <p class="subject-medium">{{email.subject}}</p>
             <p class="from-medium">{{email.sender}}<span> <{{email.from}}></span></p>
             <p class="body-medium">{{email.body}}</p>
-            <button class="remove-email" @click="remove(email.id, email)"><img class="preview-btn" src="imgs/delete.png"></button>
+            <button class="remove-email" @click="remove(email.id)"><img class="preview-btn" src="imgs/delete.png"></button>
             <button class="show-details" @click="showDetails(email.id)"><img class="preview-btn expand" src="imgs/expand.png"></button>
-
-            
         </div>
     </section>
 
@@ -55,30 +51,35 @@ export default {
             isHover: false,
             isMobileMode: false
         }
-
     },
     created() {
-        this.sendInitialUnread()
         window.addEventListener("resize", this.myEventHandler)
     },
     methods: {
+        showPreview() {
+            this.isShowPreview = !this.isShowPreview
+        },
+        remove(emailId) {
+            gmailService.getEmailById(emailId).then(email => {
+                if (email.to === 'user@appsus.com') {
+                    var unread = this.getUnread()
+                    eventBus.$emit('read', unread)
+    
+                }
+            })
+            eventBus.$emit('remove', emailId)
+        },
+        showDetails(emailId) {
+            this.$router.push({ path: '/gmail/' + emailId })
+        },
         star() {
             gmailService.starEmail(this.email)
         },
         unStar() {
             gmailService.unStarEmail(this.email)
         },
-        showPreview() {
-            if (!this.email.isRead) {
-                var unread = this.getUnread()-1
-                eventBus.$emit('read', unread)
-            } 
-            gmailService.changeEmailToRead(this.email)
-                .then(() => {
-                    if (this.email.isRead) {
-                        this.isShowPreview = !this.isShowPreview
-                    }
-                })
+        getUnread() {
+            return gmailService.getUnread()
         },
         markEmailRead() {
             if (!this.email.isRead) {
@@ -96,25 +97,7 @@ export default {
             if(this.isShowPreview) {
                 this.isShowPreview = false
             }
-        },
-        remove(emailId) {
-            gmailService.getEmailById(emailId).then(email => {
-                if (email.to === 'user@appsus.com') {
-                    var unread = this.getUnread()
-                    eventBus.$emit('read', unread)
-                }
-            })
-            eventBus.$emit('remove', emailId)
-        },
-        showDetails(emailId) {
-            this.$router.push({ path: '/gmail/' + emailId })
-        },
-        getUnread() {
-            return gmailService.getUnread()
-        },
-        sendInitialUnread() {
-            let amount = this.getUnread()
-            eventBus.$emit('getUnread', amount)
+
         },
         myEventHandler(ev) {
             if (ev.target.innerWidth <= 460) {
@@ -123,11 +106,11 @@ export default {
             else {
                 this.isMobileMode = false
             }
-        },
+        }
     },
     computed: {
         showDate() {
-            let date =`${new Date(this.email.sentAt).toString().slice(4,10)}, ${new Date(this.email.sentAt*1000).toString().slice(20,25)}` 
+            let date = `${new Date(this.email.sentAt).toString().slice(4,10)}, ${new Date(this.email.sentAt*1000).toString().slice(20,25)}`
             return date
         }
     }

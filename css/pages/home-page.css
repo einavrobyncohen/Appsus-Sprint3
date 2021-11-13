@@ -1,43 +1,93 @@
+ 
+.app-main-home {
+    height: 90vh;
+    background-color: #ffffff;
+}
+
 
 .home-img {
-    position: relative;
-    margin: 0 auto;
-    width: 1500px;
-    height: 1500px;
-    background-image: url(/imgs/home.jpeg);
-    background-repeat: no-repeat;
-    background-size: 1500px;
-}
-
-.home-img .headings{
-    top: 300px;
-    left: 650px;
     position: absolute;
+    right:0;
+   width: 800px;
+   height: 80vh;
+}
+
+.commercial {
+    height: 90vh;
+    z-index: 1;
+}
+
+.commercial-main {
+    background-color: rgba(255, 205, 3, 0.445);
+    font-family: right;
+    color: rgb(255,93,171);
+    font-size: 45px;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 140px;
+}
+
+.commercial-secondary {
+    font-family: right;
+    color: rgba(72, 61, 194, 0.514);
+    font-size: 40px;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 190px;
+}
+
+.features {
+    
+    position: relative;
+    top: 370px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
+    margin-left: 90px
 }
 
-.home-img .header{
-    color: rgba(255, 255, 255, 0.904);
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin:0;
-    text-align: center;
+.feature-email {
+    
+    margin-right: 90px;
+    width: 90px;
+    height: 90px;
 }
 
-.home-img .first-desc {
-    font-style: italic ;
-    color: rgba(212, 136, 105, 0.815);
-    text-align: center;
+.feature-todo {
+    margin-right: 70px;
+    width: 90px;
+    height: 90px;
 }
 
-.home-img .second-desc {
-    color: rgba(202, 112, 85, 0.815);
-    font-style: italic ;
-    text-align: center;
+.feature-read {
+    width: 90px;
+    height: 90px;
 }
+
+.feature-email-p {
+    margin-top: 10px;
+    font-family: right;
+    color: rgba(62, 62, 63, 0.952);
+    position: absolute;
+    top:80px;
+    margin-left: -3px;
+ 
+}
+
+.feature-todos-p {
+    margin-top: 10px;
+    font-family: right;
+    color: rgba(62, 62, 63, 0.952);
+    position: absolute;
+    top:80px;
+    margin-left: 154px;
+}
+
+
+.feature-read-p {
+    margin-top: 10px;
+    color: rgba(62, 62, 63, 0.952);
+    font-family: right;
+    position: absolute;
+    top:80px;
+    margin-left: 364px;
+}
+

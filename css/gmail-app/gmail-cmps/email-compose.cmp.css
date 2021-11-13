@@ -3,8 +3,7 @@
     z-index: 1;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: absolute;
-    width: 810px;
-    top: 50%;
+
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -40,6 +39,7 @@
 }
 
 .email-compose form h1{
+    margin: 0;
     margin-top:-20px;
     padding: 5px;
     font-size: 18px;
@@ -80,5 +80,35 @@
 
 .close-modal {
     width: 30px
+
+}
+
+@media (max-width: 460px) {
+    .email-compose{
+        top: 46%;
+        width: 350px;
+    }
+
+
+}
+
+
+
+@media (min-width: 460px) and (max-width: 700px) {
+    .email-compose{
+        top: 46%;
+        width: 450px;
+    }
+
+
+}
+
+@media (min-width: 700px) {
+
+    .email-compose{
+        width: 810px;
+        top: 50%;
+    }
+
 
 }
