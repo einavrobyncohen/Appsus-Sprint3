@@ -15,6 +15,7 @@ export const keepService = {
 const gNotes = [{
         id: utilService.makeId(),
         type: "note-txt",
+        isPinned: false,
         isPinned: true,
         info: {
             txt: "🙌🏻 למצוא את השביל המואר 🙌🏻"
@@ -26,6 +27,7 @@ const gNotes = [{
     {
         id: utilService.makeId(),
         type: "note-img",
+        isPinned: false,
         info: {
             url: "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_460,w_690/616587",
             title: "😎 מחכה לך כאן "
@@ -37,6 +39,7 @@ const gNotes = [{
     {
         id: utilService.makeId(),
         type: "note-txt",
+        isPinned: false,
         isPinned: true,
         info: {
             txt: 'Sprint is over! 🥳 Now go take a shower, you smell 💩🤨'
@@ -50,6 +53,7 @@ const gNotes = [{
     // {
     //     id: utilService.makeId(),
     //     type: "note-video",
+    //     isPinned: false,
     //     info: {
     //         url: '   https://www.youtube.com/embed/Uw4zU-fHpx0',
     //         title: "Break Time"
@@ -61,9 +65,9 @@ const gNotes = [{
     {
         id: utilService.makeId(),
         type: "note-txt",
-        isPinned: true,
+        isPinned: false,
         info: {
-            txt: "החיים הם כמו מנת פלאפל. לא משנה איך תאכל, תמיד תנזל לך טחינה מהצד"
+            txt: "תזכורת- החיים הם כמו מנת פלאפל. לא משנה איך תאכל, תמיד תנזל לך טחינה מהצד"
         },
         style: {
             backgroundColor: '#fff475'
@@ -72,6 +76,7 @@ const gNotes = [{
     {
         id: utilService.makeId(),
         type: "note-img",
+        isPinned: false,
         info: {
             url: "https://img.mako.co.il/2011/12/17/cake_c.jpg",
             title: "Winter Is Coming"
@@ -84,6 +89,7 @@ const gNotes = [{
     {
         id: utilService.makeId(),
         type: "note-todos",
+        isPinned: false,
         info: {
             label: "What to do today:",
             todos: [

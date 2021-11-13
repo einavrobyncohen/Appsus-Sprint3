@@ -1,12 +1,12 @@
 import { keepService } from '../services/keep-service.js';
 import keepList from '../keep-pages/keep-list.js';
-import noteFilter from '../keep-cmps/note-filte.js';
+import noteFilter from '../keep-cmps/note-filter.js';
 
 export default {
     template: `
     <section class="app-main">
     <note-filter @filtered="setFilter"/>
-    <keep-list :notes="notesToShow" @changeColor="changeColor"  
+    <keep-list :notes="notesToShow"  @changeColor="changeColor"  
     @editNote="editNote" @pinNote="pinNote" @duplicateNote="duplicateNote" @remove="removeNote" @add="add"></keep-list>
     </section>
     `,
@@ -14,7 +14,6 @@ export default {
         return {
             notes: null,
             filterBy: null,
-            pinnedNotes: []
         };
     },
     created() {
@@ -70,18 +69,12 @@ export default {
                     this.notes = this.notes.filter(note => note.id !== id)
                 });
         },
-        pinNote(noteId) {
-            keepService.remove(noteId)
-                .then((note) => {
-                    keepService.getById(noteId)
-                    console.log(note);
-                    this.pinnedNotes.push(note)
-                    console.log('note-app', noteId);
-                    console.log(this.pinnedNotes);
-
-                });
-
-
+        pinNote(note) {
+            keepService.save(note)
+                .then(() => {
+                    this.loadNotes()
+                })
+            console.log('app', note);
         }
     },
     computed: {
@@ -93,7 +86,16 @@ export default {
                 return note.type.toLowerCase().includes(searchStr);
             });
             return notesToShow;
+            console.log(notesToShow);
         },
+        // pinnedNotes() {
+
+        //     const pinnedNotes = this.notes.filter(note => {
+        //         if (pinnedNotes) return this.note;
+        //         return note.isPinned
+        //     })
+        //     return pinnedNotes
+        // }
     },
     components: {
         keepList,

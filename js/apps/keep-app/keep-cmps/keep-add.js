@@ -43,7 +43,7 @@ export default {
                       <ul class="cmp-type">
                         <li @click="changeCmp('note-txt')"><img src="imgs/txt.png" alt=""></li>
                         <li @click="changeCmp('note-img')"><img src="imgs/image.png" alt=""></li>
-                        <li @click="changeCmp('note-video')" ><img src="imgs/youtube.png" alt=""></li>
+                        <!-- <li @click="changeCmp('note-video')" ><img src="imgs/youtube.png" alt=""></li> -->
                        <li @click="changeCmp('note-todos')"><img src="imgs/list.png" alt=""></li>
                      </ul>
             </section>
@@ -57,6 +57,7 @@ export default {
             newNote: {
                 id: '',
                 type: 'note-txt',
+                isPinned: false,
                 info: {
                     txt: '',
                     url: '',
@@ -84,6 +85,7 @@ export default {
             const newNote = {
                 id: '',
                 type: 'note-txt',
+                isPinned: false,
                 info: {
                     txt: '',
                     url: '',

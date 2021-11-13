@@ -9,13 +9,14 @@
 }
 
 .note-img img {
-    margin-top: 10px;
-    width: 250px;
+    margin-top: 5px;
+    width: 200px;
+    height: 120px;
 }
 
 .note-img h1,
 .note-video h1 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin: 0;
 }
 

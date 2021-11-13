@@ -15,7 +15,7 @@ export default {
     <section class="edit">
                   <div>
                   <ul class="tool-bar">
-                        <li @click="pinNote(note.id)"><img src="imgs/pin.png" alt=""></li>
+                        <!-- <li @click="pinNote()"><img src="imgs/pin.png" alt=""></li> -->
                         <li @click="isColorOpen=!isColorOpen"><img src="imgs/palette.png" alt=""></li>
                         <li><img src="imgs/letter.png" alt=""></li>
                         <li @click="duplicate()"><img src="imgs/duplicate.png" alt=""></li>
@@ -36,7 +36,6 @@ export default {
             colors: keepService.getColorsOption(),
             isColorOpen: false,
             isEdited: false,
-            isPinned: false
         }
     },
     computed: {
@@ -60,12 +59,12 @@ export default {
             newNote.id = null
             this.$emit('duplicateNote', newNote)
         },
-        pinNote(noteId) {
-            this.isPinned = !this.isPinned
-            this.$emit('pinNote', noteId)
-            console.log('isPinned', this.isPinned);
-            console.log('note-preview', noteId);
-        }
+        // pinNote(note) {
+        //     this.note.isPinned = !this.note.isPinned
+        //     note = this.note
+        //     this.$emit('pinNote', note)
+        //     console.log('note-preview', note);
+        // }
     },
     components: {
         noteTxt,

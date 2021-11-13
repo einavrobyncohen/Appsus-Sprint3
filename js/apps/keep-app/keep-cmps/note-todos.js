@@ -15,9 +15,7 @@ export default {
             isDone: false,
         }
     },
-    created() {
-        console.log(this.isDone);
-    },
+    created() {},
     computed: {
         class() {
             if (this.isDone) return 'done'

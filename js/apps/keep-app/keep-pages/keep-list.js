@@ -8,7 +8,7 @@ export default {
         <keep-add @add="add"></keep-add>
         <div>
             <ul class="note-list" >
-                <li v-for="note in notes"  :key="note.id" class="note-container" :style="{backgroundColor: note.style.backgroundColor}">
+                <li v-for="note in notes" :key="note.id" class="note-container" :style="{backgroundColor: note.style.backgroundColor}">
                     <keep-preview @pinNote="pinNote" @editNote="editNote" @duplicateNote="duplicateNote" :note="note" @remove="remove" @changeColor="changeColor"></keep-preview>
                 </li>
             </ul>
@@ -18,10 +18,7 @@ export default {
     data() {
         return {};
     },
-    created() {
-        console.log(this.$route.params)
-
-    },
+    created() {},
     methods: {
         add(newNote) {
             this.$emit('add', newNote)
@@ -50,14 +47,14 @@ export default {
         duplicateNote(newNote) {
             this.$emit('duplicateNote', newNote)
         },
-        pinNote(noteId) {
-            this.$emit('pinNote', noteId)
-            console.log('note-list', noteId);
+        pinNote(note) {
+            this.$emit('pinNote', note)
+            console.log('note-list', note);
         }
     },
     components: {
         keepPreview,
-        keepAdd
+        keepAdd,
     },
     watch: {
         '$route.params.email': {

@@ -34,3 +34,22 @@
 .add-todos input {
     font-size: 1rem;
 }
+
+@media (max-width: 600px) {
+    .notes-box {
+        font-size: 1rem;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+    }
+    .notes-box input {
+        width: 230px;
+    }
+    .cmp-type {
+        padding: 0;
+    }
+    .cmp-type img {
+        width: 18px;
+    }
+}

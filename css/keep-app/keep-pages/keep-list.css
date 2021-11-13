@@ -5,9 +5,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
     font-family: cursive;
-    max-height: 70vh;
+    max-height: 68vh;
     overflow-y: auto;
     margin: auto;
 }
@@ -22,7 +22,7 @@
 }
 
 .note-list::-webkit-scrollbar-thumb {
-    background: linear-gradient(to left, rgba(231, 180, 139, 0.884), rgba(231, 180, 139, 0.884));
+    background-color: rgb(250, 210, 123);
     border-radius: 5px;
     height: 5px;
 }
@@ -52,14 +52,12 @@
 }
 
 .tool-bar li {
-    padding: 20px 15px;
+    padding: 0 15px;
 }
 
 .note-container {
-    padding: 5px;
-    height: 300px;
-    width: 400px;
-    /* background-color: rgba(247, 232, 232, 0.726); */
+    padding: 5px 15px;
+    height: 250px;
     color: rgb(37, 37, 37);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 30px;
@@ -68,3 +66,15 @@
 .note-container:hover {
     box-shadow: rgba(0, 0, 0, 0.671) 0px 2px 4px, rgba(0, 0, 0, 0.651) 0px 7px 13px -3px, rgba(0, 0, 0, 0.555) 0px -3px 0px inset;
 }
+
+
+/* @media (max-width: 460px) {
+    .notes-list {
+        width: 100%;
+    }
+    .notes-list input {
+        width: 230px;
+    }
+}
+
+@media (max-width: 700px) {} */
