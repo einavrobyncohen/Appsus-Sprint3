@@ -17,7 +17,7 @@ export default {
                   <ul class="tool-bar">
                         <!-- <li @click="pinNote()"><img src="imgs/pin.png" alt=""></li> -->
                         <li @click="isColorOpen=!isColorOpen"><img src="imgs/palette.png" alt=""></li>
-                        <li><img src="imgs/letter.png" alt=""></li>
+                        <!-- <li><img src="imgs/letter.png" alt=""></li> -->
                         <li @click="duplicate()"><img src="imgs/duplicate.png" alt=""></li>
                         <li @click="editNote()"><img src="imgs/edit.png" alt=""></li>
                         <li @click="remove(note.id)"><img src="imgs/trash-can.png" alt=""></li>

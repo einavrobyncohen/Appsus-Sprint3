@@ -13,6 +13,19 @@ export const keepService = {
 };
 
 const gNotes = [{
+
+        id: utilService.makeId(),
+        type: "note-txt",
+        isPinned: false,
+        isPinned: true,
+        info: {
+            txt: 'Sprint is over! 🥳 Now go take a shower, you smell like 💩'
+        },
+        style: {
+            backgroundColor: '#f28b82'
+        }
+    },
+    {
         id: utilService.makeId(),
         type: "note-txt",
         isPinned: false,
@@ -21,7 +34,7 @@ const gNotes = [{
             txt: "🙌🏻 למצוא את השביל המואר 🙌🏻"
         },
         style: {
-            backgroundColor: '#f28b82'
+            backgroundColor: '#fbbc04'
         }
     },
     {
@@ -33,6 +46,69 @@ const gNotes = [{
             title: "😎 מחכה לך כאן "
         },
         style: {
+            backgroundColor: '#fff475'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "note-txt",
+        isPinned: false,
+        isPinned: true,
+        info: {
+            txt: 'Until when caSep 21?! 😫'
+        },
+        style: {
+            backgroundColor: '#ccff90'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "note-txt",
+        isPinned: false,
+        info: {
+            txt: "תזכורת- החיים הם כמו מנת פלאפל. לא משנה איך תאכל, תמיד תנזל לך טחינה מהצד"
+        },
+        style: {
+            backgroundColor: '#a7ffeb'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "note-img",
+        isPinned: false,
+        info: {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUyc9AbeKBpo0iCFZJ41TndaO0hZ68SuzuCQ&usqp=CAU",
+            title: "I am beautiful, no matter what they say"
+        },
+        style: {
+            backgroundColor: '#cbf0f8'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "note-todos",
+        isPinned: false,
+        info: {
+            label: "How to survive this week:",
+            todos: [
+                { txt: 'Breathe' },
+                { txt: 'Breathe more' },
+
+            ]
+        },
+        style: {
+            backgroundColor: '#aecbfa'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "note-img",
+        isPinned: false,
+        info: {
+            url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/asos-name-meaning-1502458810.jpg",
+            title: "Black  friday is coming!!"
+        },
+        style: {
             backgroundColor: '#d7aefb'
         }
     },
@@ -42,13 +118,12 @@ const gNotes = [{
         isPinned: false,
         isPinned: true,
         info: {
-            txt: 'Sprint is over! 🥳 Now go take a shower, you smell 💩🤨'
+            txt: "Yup, I totally deserve pizza and cake for breakfest 🎂🍕"
         },
         style: {
-            backgroundColor: '#ccff90'
+            backgroundColor: '#fdcfe8'
         }
     },
-
 
     // {
     //     id: utilService.makeId(),
@@ -64,13 +139,14 @@ const gNotes = [{
     // },
     {
         id: utilService.makeId(),
-        type: "note-txt",
+        type: "note-img",
         isPinned: false,
         info: {
-            txt: "תזכורת- החיים הם כמו מנת פלאפל. לא משנה איך תאכל, תמיד תנזל לך טחינה מהצד"
+            url: "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/02/25/Pictures/_056331ba-57bd-11ea-8884-f7c338dc7f56.jpg",
+            title: "Happiness is only real when shared"
         },
         style: {
-            backgroundColor: '#fff475'
+            backgroundColor: '#f28b82'
         }
     },
     {
@@ -79,10 +155,10 @@ const gNotes = [{
         isPinned: false,
         info: {
             url: "https://img.mako.co.il/2011/12/17/cake_c.jpg",
-            title: "Winter Is Coming"
+            title: "ישר לתחת"
         },
         style: {
-            backgroundColor: '#fdcfe8'
+            backgroundColor: '#a7ffeb'
         }
     },
 
@@ -99,9 +175,9 @@ const gNotes = [{
             ]
         },
         style: {
-            backgroundColor: '#a7ffeb'
+            backgroundColor: '#fff475'
         }
-    }
+    },
 ];
 
 _createNotes();
