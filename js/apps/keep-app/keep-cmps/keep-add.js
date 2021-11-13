@@ -2,57 +2,97 @@ export default {
     props: [],
     template: `
 <section class="keep-add">
-<form @submit.prevent="add()" >
+
             <!--  // --v-if="!isFromGmail"> -->
-            <div class="notes-box">
-                <input v-if="" v-model="newNote.info.txt" type="text" placeholder="What\'s on your mind...">
-                <ul class="cmp-type">
-                    <li @click="changeCmp('note-txt')">💭</li>
-                    <li @click="changeCmp('note-img')">🖼</li>
-                    <li @click="changeCmp('note-video')">🎞</li>
-                    <li @click="changeCmp('note-todos')">♒</li>
-                </ul>
-            </div>
+            <section class="notes-box">
+                    <form @submit.prevent v-if="newNote.type==='note-txt'" >
+                          <input v-model="newNote.info.txt" type="text" placeholder="What\'s on your mind...">
+                          <button @click="add" hidden></button>
+                    </form>
+                
+                
+                    <form @submit.prevent  v-if="newNote.type=== 'note-img'" >
+                          <input v-model="newNote.info.title" type="text" placeholder="What\'s on your mind...">
+                          <div class="keep-add">
+                              <input type="text" v-model="newNote.info.url" :src="newNote.info.url" placeholder="Insert Image Url" alt="image" >
+                          </div>
+                           <button @click="add" hidden></button>
+                    </form>
+             
+        
+                   <form @submit.prevent v-if="newNote.type==='note-video'" >
+                         <input v-model="newNote.info.title" type="text" placeholder="What\'s on your mind...">
+                         <div class="keep-add">
+                             <input v-model="newNote.info.url" type="url" name="" id="" :src="newNote.info.url" placeholder="Insert video Url">
+                         </div>
+                         <button @click="add" hidden></button>
+                    </form>
+              
+              
+                   <form @submit.prevent="add"  v-if="newNote.type==='note-todos'" >
+                       <input v-model="newNote.info.label" type="text" placeholder="What\'s on your mind...">
+                     <div class="keep-add">
+                     <ul class="add-todos" >
+                      <li ><input v-model="newNote.info.todos[0].txt" type="text" placeholder="Add a Mission For Today"></li>
+                      <li ><input v-model="newNote.info.todos[1].txt" type="text" placeholder="Add a Mission For Today"></li>
+                    </ul>
+                     </div>
+                        <button @click="add" hidden></button>
+                    </form>
+         
+                      <ul class="cmp-type">
+                        <li @click="changeCmp('note-txt')"><img src="imgs/txt.png" alt=""></li>
+                        <li @click="changeCmp('note-img')"><img src="imgs/image.png" alt=""></li>
+                        <li @click="changeCmp('note-video')" ><img src="imgs/youtube.png" alt=""></li>
+                       <li @click="changeCmp('note-todos')"><img src="imgs/list.png" alt=""></li>
+                     </ul>
+            </section>
 
             <!-- v-if="isFromGmail" -->
 
-        </form>
 </section>
 `,
     data() {
         return {
             newNote: {
                 id: '',
-                type: "note-txt",
+                type: 'note-txt',
                 info: {
-                    txt: ''
+                    txt: '',
+                    url: '',
+                    title: '',
+                    label: '',
+                    todos: [
+                        { txt: '' },
+                        { txt: '' },
+                    ]
                 },
                 style: {
                     backgroundColor: 'white'
                 }
             },
-            isTxt: false,
+            isTxt: true,
             isImg: false,
             isTodos: false,
             isVideo: false,
         }
     },
-    computed: {
-        // noteType() {
-        //     if (this.newNote.type === "note-txt") return 'note-txt'
-        //     else if (this.newNote.type === "note-img") return 'note-img'
-        //     else if (this.newNote.type === "note-todos") return 'note-todos'
-
-        // }
-    },
+    computed: {},
     methods: {
         add() {
             this.$emit('add', this.newNote)
             const newNote = {
                 id: '',
-                type: "note-txt",
+                type: 'note-txt',
                 info: {
-                    txt: ''
+                    txt: '',
+                    url: '',
+                    title: '',
+                    label: '',
+                    todos: [
+                        { txt: '' },
+                        { txt: '' },
+                    ]
                 },
                 style: {
                     backgroundColor: 'white'
@@ -62,11 +102,6 @@ export default {
         },
         changeCmp(cmp) {
             this.newNote.type = cmp
-            if (cmp === 'note-txt') this.isTxt = !this.isTxt
-            else if (cmp === 'note-img') this.isImg = !this.isImg
-            else if (cmp === 'note-video') this.isVideo = !this.isVideo
-            else if (cmp === 'note-todos') this.isTodos = !this.isTodos
-            console.log(this.isTxt, this.isTodos, this.isImg);
         }
 
     }

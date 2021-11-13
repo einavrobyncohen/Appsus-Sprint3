@@ -4,10 +4,20 @@
 }
 
 .note-img img {
-    width: 150px;
+    width: 250px;
 }
 
 .note-img h1 {
-    font-size: 1.25rem;
-    margin: 5px 0 0;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.note-img input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0;
+    margin-top: 5px;
 }

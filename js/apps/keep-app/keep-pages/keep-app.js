@@ -4,7 +4,8 @@ import keepList from '../keep-pages/keep-list.js';
 export default {
     template: `
     <section class="app-main">
-    <keep-list :notes="notes" @changeColor="changeColor" @editNote="editNote" @remove="removeNote" @add="add"></keep-list>
+    <keep-list :notes="notes" @changeColor="changeColor"  
+    @editNote="editNote" @duplicateNote="duplicateNote" @remove="removeNote" @add="add"></keep-list>
     </section>
     `,
     data() {
@@ -41,6 +42,14 @@ export default {
                 })
 
         },
+        duplicateNote(newNote) {
+            console.log('note3', newNote);
+            keepService.save(newNote)
+                .then(() => {
+                    this.loadNotes();
+
+                })
+        },
         add(newNote) {
             keepService.save(newNote)
                 .then(() => {
@@ -51,23 +60,9 @@ export default {
         removeNote(id) {
             keepService.remove(id)
                 .then(() => {
-                    // const msg = {
-                    //     txt: 'Deleted succesfully',
-                    //     type: 'success'
-                    // };
-                    // eventBus.$emit('showMsg', msg);
                     this.notes = this.notes.filter(note => note.id !== id)
-                })
-                // .catch(err => {
-                //     console.log('err', err);
-                //     const msg = {
-                //         txt: 'Error. Please try later',
-                //         type: 'error'
-                //     };
-                //     eventBus.$emit('showMsg', msg);
-                // });
+                });
         },
-
     },
     computed: {},
     components: {

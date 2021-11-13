@@ -17,35 +17,83 @@ const gNotes = [{
         type: "note-txt",
         isPinned: true,
         info: {
-            txt: "Fullstack Me Baby!"
+            txt: "🙌🏻 למצוא את השביל המואר 🙌🏻"
         },
         style: {
-            backgroundColor: 'lightpink'
+            backgroundColor: '#f28b82'
         }
     },
     {
         id: utilService.makeId(),
         type: "note-img",
         info: {
-            url: "https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__340.jpg",
-            title: "Bobi and Me"
+            url: "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_460,w_690/616587",
+            title: "😎 מחכה לך כאן "
         },
         style: {
-            backgroundColor: 'lavender'
+            backgroundColor: '#d7aefb'
         }
     },
     {
         id: utilService.makeId(),
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: 'Sprint is over! 🥳 Now go take a shower, you smell 💩🤨'
+        },
+        style: {
+            backgroundColor: '#ccff90'
+        }
+    },
+
+
+    {
+        //     id: utilService.makeId(),
+        //     type: "note-video",
+        //     info: {
+        //         url: "https://www.youtube.com/watch?v=KDIbpeu9Ccw",
+        //         title: "The Roof Is On Fireeee!"
+        //     },
+        //     style: {
+        //         backgroundColor: 'lightgreen'
+        //     }
+        // },
+        // {
+        id: utilService.makeId(),
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: "החיים הם כמו מנת פלאפל. לא משנה איך תאכל, תמיד תנזל לך טחינה מהצד"
+        },
+        style: {
+            backgroundColor: '#fff475'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "note-img",
+        info: {
+            url: "https://img.mako.co.il/2011/12/17/cake_c.jpg",
+            title: "Winter Is Coming"
+        },
+        style: {
+            backgroundColor: '#fdcfe8'
+        }
+    },
+
+    {
+        id: utilService.makeId(),
         type: "note-todos",
         info: {
-            label: "Get my stuff together",
+            label: "What to do today:",
             todos: [
-                { txt: "Driving liscence", doneAt: null },
-                { txt: "Coding power", doneAt: 187111111 }
+                { txt: 'Wake Up' },
+                { txt: 'Go Back To Sleep' },
+
             ]
         },
         style: {
-            backgroundColor: 'lightblue'
+            backgroundColor: '#a7ffeb'
         }
     }
 ];

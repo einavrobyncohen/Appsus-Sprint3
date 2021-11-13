@@ -5,25 +5,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
-}
-
-.notes-box {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    height: 50px;
-    width: 700px;
-    padding: 10px;
-    font-size: 1.2rem;
-}
-
-.keep-preview {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 30px;
+    font-family: cursive;
 }
 
 .cmp-type,
@@ -43,22 +26,21 @@
     border: none;
     outline: none;
     width: 400px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .tool-bar {
     padding: 0;
-    font-size: 1.25rem;
 }
 
 .tool-bar li {
-    padding: 5px;
+    padding: 20px 15px;
 }
 
 .note-container {
     padding: 5px;
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 400px;
     /* background-color: rgba(247, 232, 232, 0.726); */
     color: rgb(37, 37, 37);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
