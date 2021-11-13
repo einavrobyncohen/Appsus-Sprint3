@@ -3,6 +3,7 @@
 
 /* @import "./book-app/book-pages/" */
 
+
 @import "./cmps/app-footer.css";
 @import "./cmps/app-header.css";
 @import "./gmail-app/gmail-cmps/email-body.cmp.css";
@@ -23,9 +24,13 @@
 @import "./keep-app/keep-pages/keep-app.css";
 @import "./pages/home-page.css";
 @import "./parts/helpers.css";
+@import "./book-app/book-cmps/style.css";
+
 * {
     box-sizing: border-box;
 }
+
+
 
 html {
     font-family: Arial, Helvetica, sans-serif;

@@ -15,7 +15,7 @@ export default {
             <div v-if="isShowOptions" class="more-options">
                 <img  class="options-img" src="imgs/filter 2.png">
             <select class="chooseFilter" @input="filter" v-model="filterBy.show">
-                <option>All</option>
+                <option >All</option>
                 <option>Read</option>
                 <option>Unread</option>
             </select>
@@ -33,7 +33,8 @@ export default {
                 subject: '',
                 show: ''
             },
-            isShowOptions: false
+            isShowOptions: false,
+            selected: 'All'
         }
     },
     methods: {

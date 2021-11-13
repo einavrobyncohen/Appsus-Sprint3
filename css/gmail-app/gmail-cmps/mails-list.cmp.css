@@ -1,31 +1,42 @@
-
-.emails-list .list {
-    margin-top: 80px;
-    padding: 0;
+.emails-list .list{
     display: flex;
     flex-direction: column;
-    margin-left: -100px;
-    height: 80%;
     overflow:scroll;
     overflow-x:hidden;
-   
+
 }
 
 
+@media (max-width: 460px) {
+    .emails-list {
+        display: flex;
+    }
 
-.list::-webkit-scrollbar-thumb {
-    background: linear-gradient(to left, #30bb72, #0f9bb3);
-    border-radius: 5px;
-    height: 5px;
+    .emails-list .list {
+        margin-top: 70px;
+        width: 375px;
+        height: 80vh;
+    }
 }
 
-.side-bar >* {
-    margin-top: 5px;
-    margin-left: 20px;
+@media (max-width: 730px) and (min-width: 460px) {
+    .emails-list {
+        margin-left: 20px;
+    }
+
+    .emails-list .list {
+        margin-top: 70px;
+        width: 450px;
+        height: 80vh;
+    }
 }
 
 
-.emails-list >* li {
-    padding: 0;
+@media (min-width: 730px) {
+    .emails-list .list {
+        margin-top: 80px;
+        max-width: 80vw;
+        padding: 0;
+        height: 85%;
+    }
 }
-

@@ -2,43 +2,27 @@
 .email-preview {
     color: rgb(68, 68, 68);
     padding: 0;
-    margin-left: 100px;
-    font-size: 13px;
+
 }
-
-
 /* before-click */
 
 .email-modal-small {
+    position: relative;
     font-size: 12px;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr .5fr;
-    gap: 30px;
-    width: 80vw;
     border: .3px solid rgba(180, 180, 180, 0.514);
     border-collapse: collapse;
     border-top: none;
     border-left: none;
 }
 
-
 .email-modal-small>*{
     display: flex;
     align-items: center;
     position: relative;
 }
-
-
-.sender-small {
-    margin-left: 30px;
-    font-weight:600;
-}
-
-.subject-small {
-    font-weight:600;
-}
-
 .email-modal-small:hover {
+    transition: 0.2s;
     transition: .1s;
     cursor: pointer;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -52,10 +36,7 @@
     padding-inline-start: 10px;
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    border: .5px solid rgba(128, 128, 128, 0.514);
 }
-
 
 .subject-medium {
     font-size: 15px;
@@ -75,20 +56,21 @@
 .body-medium {
    font-size: 12px;
 }
-
 .remove-email {
     border :none;
     background-color: transparent;
     cursor: pointer;
    position: absolute;
-   right: 0;
+   right: 10px;
 }
-
 .preview-btn {
     margin-top: 10px;
     width: 20px;
     opacity: 0.7;
 }
+/* .date-preview {
+  
+} */
 
 .expand{
     opacity: 0.5;
@@ -101,13 +83,249 @@
     margin-right: 10px;
     position: absolute;
     top: 2px;
-    right: 20px;
-
+    right: 35px;
 }
+.star-img {
+    opacity: 0.7;
+    width: 20px;
+}
+
+/* hover-state */
 
 /* helpers */
 
 .read {
     background-color: rgba(240, 240, 240, 0.712);
     color: rgb(94, 94, 94);
+}
+
+
+@media (max-width: 460px) {
+
+    .email-modal-small {
+        position: relative;
+        width: 360px;
+        grid-template-rows:  3px 5px 3px ;
+    }
+
+    .email-modal-medium {
+        min-width: 360px;
+    }
+
+    .star-img {
+        margin: auto;
+        margin-top: 50px;
+        margin-left: 330px;
+    }
+
+    .delete-hover-btn {
+        position: absolute;
+        right: 10px;
+        top:-85px;
+        width: 20px;
+    }
+    
+    .unread-hover-btn {
+        position: absolute;
+        right: 40px;
+        top:-85px;
+        width: 20px;
+    }
+    
+    .read-hover-btn {
+        position: absolute;
+        right: 40px;
+        top:-85px;
+        width: 20px;
+    }
+
+    .date-preview {
+        top:-90px;
+        left: 280px;
+    }
+    .sender-small {
+        margin-top: 20px;
+        letter-spacing: 0.03rem;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        font-family: manrope-m;
+    }
+
+    .body-small {
+        margin-top: 50px;
+        letter-spacing: 0.03rem;
+        margin-left: 20px;
+    }
+    
+    .subject-small {
+        margin-top: 40px;
+        letter-spacing: 0.03rem;
+        margin-left: 20px;
+        font-size: 16px;
+        font-family: manrope-m;
+    }
+}
+@media (max-width: 730px) and (min-width: 460px) {
+    .email-modal-small {
+        position: relative;
+        width: 450px;
+        grid-template-rows:  3px 15px 3px ;
+        gap: 9px;
+    }
+
+    .email-modal-medium {
+        width: 570px;
+    }
+
+    .delete-hover-btn {
+        position: absolute;
+        right: 90px;
+        top:-62px;
+        width: 20px;
+    }
+    
+    .unread-hover-btn {
+        position: absolute;
+        right: 60px;
+        top:-62px;
+        width: 20px;
+    }
+    
+    .read-hover-btn {
+        position: absolute;
+        right: 60px;
+        top:-62px;
+        width: 20px;
+    }
+
+    .star-img {
+        margin: auto;
+        margin-top: 35px;
+        margin-left: 400px;
+    }
+    .date-preview {
+        position: absolute;
+        top:0;
+        margin-left: 360px;
+    }
+
+    .sender-small {
+        margin-top: 10px;
+        letter-spacing: 0.03rem;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-family: manrope-m;
+    }
+
+    .body-small {
+        letter-spacing: 0.03rem;
+        margin-left: 20px;
+
+    }
+    
+    .subject-small {
+        letter-spacing: 0.03rem;
+        margin-left: 20px;
+        font-size: 14px;
+        font-family: manrope-m;
+    }
+
+    .remove-email {
+        border :none;
+        background-color: transparent;
+        cursor: pointer;
+       position: absolute;
+       right: 140px;
+    }
+
+    .show-details {
+        border :none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 10px;
+        position: absolute;
+        top: 2px;
+        right: 160px;
+    }
+    .body-medium {
+        width: 430px;
+        font-size: 11px;
+     }
+}
+
+
+
+
+@media (min-width: 730px) {
+    .email-modal-small {
+        grid-template-columns:  10px 1fr 1fr 2fr   .8fr;
+        width: 85vw;
+        border: .3px solid rgba(180, 180, 180, 0.514);
+        border-collapse: collapse;
+        border-top: none;
+        border-left: none;
+    }
+
+    .email-preview {
+        font-size: 13px;
+    }
+
+    .email-modal-medium {
+        width: 85vw;
+    }
+
+    .sender-small {
+        margin-left: 30px;
+    }
+    .delete-hover-btn {
+        top: 11px;
+        left:43px;
+        position: absolute;
+        width: 20px;
+    }
+    
+    .unread-hover-btn {
+        left: 10px;
+        position:absolute;
+        width: 20px;
+    }
+    
+    .read-hover-btn {
+        left: 10px;
+        position:absolute;
+        width: 20px;
+    }
+
+    .sender-small {
+        margin-left: 50px;
+        font-weight:600;
+    }
+    
+    .subject-small {
+        font-weight:600;
+    }
+    .remove-email {
+        border :none;
+        background-color: transparent;
+        cursor: pointer;
+       position: absolute;
+       right: 100px;
+    }
+    .show-details {
+        border :none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 10px;
+        position: absolute;
+        top: 2px;
+        right: 120px;
+    }
+
+    .star-img {
+        margin-left: 10px;
+        opacity: 0.7;
+        width: 20px;
+    }
 }

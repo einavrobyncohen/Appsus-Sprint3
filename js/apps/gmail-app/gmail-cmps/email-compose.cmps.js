@@ -1,5 +1,6 @@
 
 import {eventBus}  from '../../../services/event-bus-service.js'
+var newEmails = []
 
 export default {
     template:`
@@ -7,7 +8,7 @@ export default {
     <p class="exit" @click="closeModal">X<p>
         <form>
             <h1>New Message</h1>
-            <input v-model="emptyEmail.to" placeholder="To:"/>
+            <input class="input1" v-model="emptyEmail.to" placeholder="To:"/>
             <input v-model="emptyEmail.subject" placeholder="Subject:"/>
             <textarea v-model="emptyEmail.body"></textarea>
             <div class="actions">
@@ -22,10 +23,12 @@ export default {
         return{
             emptyEmail: {
                 id: null,
-                sender: 'Mahatma Appsus',
+                sender: 'Mahatma',
                 subject:'',
                 body:'',
                 isRead: false,
+                isStarred: false,
+                isTrash: false,
                 sentAt: Date.now(),
                 to: '',
                 from: 'user@appsus.com'

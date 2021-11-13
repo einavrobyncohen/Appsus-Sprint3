@@ -3,31 +3,32 @@
 
 @font-face {
     font-family: manrope-l;
-    src: url(/fonts/Manrope-Light.ttf);
+    src: url(../../../fonts/Manrope-Light.ttf);
 }
 
 @font-face {
     font-family:  manrope-m;
-    src: url(/fonts/Manrope-Medium.ttf);
+    src: url(../../../fonts/Manrope-Medium.ttf);
 }
 
 @font-face {
     font-family: manrope-r;
-    src: url(/fonts/Manrope-Regular.ttf);
+    src: url(../../../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+    font-family: right;
+    src: url(../../../fonts/Righteous-Regular.ttf);
 }
 
 
-
-.gmail-app h1 {
-    margin: 0;
-}
-
-.gmail-app {
+.gmail-app{
     font-family: manrope-r;
     display: flex;
 }
 
 .gmail-app ul {
+
     padding: 0;
     flex-direction: column;
     list-style: none;

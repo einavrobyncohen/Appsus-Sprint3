@@ -1,30 +1,66 @@
 .app-header {
+    font-family: right;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vh;
-    background-color: rgba(231, 180, 139, 0.884);
+    height: 6vh;
+    background-color: rgb(252,134,171);
     cursor: pointer;
 }
 
-.main-nav {
-    margin-right: 40px;
-    width: 50px;
-    height: 3vh;
-    border-radius: 50%;
-    background-color: rgba(103, 138, 87, 0.445);
+.logo-img {
+    margin-left: 10px;
+    height: 5vh;
 
 }
+
+
+.router-link-exact-active {
+    background-color: rgba(255, 255, 0, 0.411);
+    color: yellow;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 
 .app-header h3 {
     margin:0;
 }
 
-.main-nav-container {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
 
+
+
+@media (max-width: 460px) {
+    .main-nav-container >* {
+        font-size: 12px;
+        cursor: pointer;
+        padding: 1px;
+        margin-inline-end: 6px;
+    }
+
+    .logo-img {
+        margin-top: 8px;
+        width: 80px;
+        height: 4vh;
+    }
+
+}
+@media (min-width: 700px) {
+
+    .logo-img {
+        margin-left: 10px;
+        height: 5vh;
+
+    
+    }
+
+    .main-nav-container >* {
+        cursor: pointer;
+        padding: 3px;
+        margin-inline-end: 12px;
+    }
+    
 
 }

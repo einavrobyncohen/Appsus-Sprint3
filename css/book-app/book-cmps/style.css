@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* filter */
+
+ .book-filter {
+     color: rgb(104, 104, 104);
+     font-family:  manrope-m;
+    font-size: 13px;
+    margin: 0 auto;
+  
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fffffff8;
+    width: 500px;
+} 
+
+
+/* details */
+ .book-details {
+    font-family:  manrope-l;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+
+
+.book-details img {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+} 
+
+.book-description {
+    font-family:  manrope-l;
+    background-color: #dfdfdfec;
+    margin: 0 auto;
+    width: 500px;
+} 
+
+
+/* add-review */
+
+ .add-review > {
+    font-family:  manrope-l;
+    top: 0;
+    margin: 0 auto;
+    background-color: burlywood;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.add- review {
+    position: absolute;
+}
+
+
+
+/* edit */
+
+.book-edit {
+    background-color: lightcoral;
+    padding: 20px;
+}
+
+
+/* list */
+
+.book-list {
+    font-family:  manrope-l;
+    max-height: 75vh;
+    overflow:scroll;
+    overflow-x:hidden;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+
+/* preview */
+
+.book-preview-container {
+    font-family:  manrope-l;
+    width: 200px;
+    height: 210px;
+    position: relative;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.918);
+    font-size: 14px;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-preview-container img {
+    width: 80px;
+    height: 100px;
+}
+
+.book-preview .sale {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+
+/* footer */
+
+
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+
+.user-msg {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 10px;
+}
+
+.success {
+    background-color: rgb(27, 180, 27);
+}
+
+.error {
+    background-color: red;
+}
+
+/* links */
+
+.router-link-exact-active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(240, 227, 186);
+}
+
+.active-link {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* animations */
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+    {
+    opacity: 0;
+}
+
+/* book-add */
+
+.book-add {
+    text-align: center;
+}
+
+.input-book {
+    border: none;
+}
+
+input {
+    color: rgb(82, 82, 82);
+}
+
+.input-book:first-child{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 120px;
+}
+
+
+.input-book:nth-child(2) {
+    margin-right: 5px;
+    width: 50px;
+    border-left: gray;
+    color: rgb(114, 114, 114);
+    background-color: rgba(230, 230, 230, 0.479);
+}
+
+.input-book:nth-child(3) {
+    margin-right: 30px;
+    width: 50px;
+    border-left: gray;
+    background-color: rgba(230, 230, 230, 0.479);
+}
+
+.btn-book {
+    margin-left: 20px;
+    font-family:  manrope-r;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(238, 155, 0, 0.562);
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+}

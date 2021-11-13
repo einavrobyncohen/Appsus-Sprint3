@@ -18,7 +18,7 @@ export default {
             <long-text class="body-small":txt="email.body" />
             <p class="date-preview" v-if="!isHover">{{showDate}}</p>
             <div  v-else>
-            <img class="delete-hover-btn" src="imgs/delete.png" @click.stop="trash(email)">
+            <img class="delete-hover-btn" src="imgs/delete.png" @click.stop="remove(email.id)">
             </div>
         </div>  
     </div>
@@ -37,7 +37,7 @@ export default {
             <p class="subject-medium">{{email.subject}}</p>
             <p class="from-medium">{{email.sender}}<span> <{{email.from}}></span></p>
             <p class="body-medium">{{email.body}}</p>
-            <button class="remove-email" @click="trash(email)"><img class="preview-btn" src="imgs/delete.png"></button>
+            <button class="remove-email" @click="remove(email.id)"><img class="preview-btn" src="imgs/delete.png"></button>
             <button class="show-details" @click="showDetails(email.id)"><img class="preview-btn expand" src="imgs/expand.png"></button>
         </div>
     </section>
@@ -66,14 +66,14 @@ export default {
         showPreview() {
             this.isShowPreview = !this.isShowPreview
         },
-        trash(email) {
-            gmailService.trashEmail(email).then(email => {
+        remove(emailId) {
+            gmailService.getEmailById(emailId).then(email => {
                 if (email.to === 'user@appsus.com') {
                     var unread = this.getUnread()
                     eventBus.$emit('read', unread)
                 }
             })
-            eventBus.$emit('trash', email)
+            eventBus.$emit('remove', emailId)
         },
         showDetails(emailId) {
             this.$router.push({ path: '/gmail/' + emailId })

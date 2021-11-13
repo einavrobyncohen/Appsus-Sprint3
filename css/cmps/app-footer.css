@@ -1,13 +1,14 @@
 .footer  {
-    height: 5vh;
-    background-color: rgba(240, 238, 238, 0.856);
- 
-
+    height: 4vh;
+    background-color: #ffffff;
 }
 
-.footer h1 {
+
+.footer .copyright {
     margin: 0;
     display: flex;
     justify-content: center;
+    font-family:manrope-l;
+    color: rgba(72, 61, 194, 0.877);
 
 }

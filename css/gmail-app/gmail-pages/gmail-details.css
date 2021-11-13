@@ -21,7 +21,6 @@
     align-items: center;
     flex-direction: column;
     height: 80%;
-    width: 550px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
@@ -61,7 +60,7 @@
 .subject {
     margin-bottom: 10px;
     padding-top: 55px;
-    font-size: 25px;
+
 
 }
 
@@ -97,8 +96,90 @@
     border-top: 1px solid gray;
     font-size: 15px;
     padding-top: 40px;
-    width: 450px;
     letter-spacing: 0.05rem;
-    margin-left: 45px;
     align-self: flex-start;
+}
+
+
+
+@media (max-width: 460px) {
+
+    .body {
+        margin-left: 10px;
+    }
+
+    .subject {
+        font-size: 20px;
+
+    }
+    .date {
+        font-size: 12px;
+    }
+
+    .sender {
+        display: flex;
+        font-size: 10px;
+    }
+
+    .from {
+        
+        font-size: 12px;
+        color: rgb(85, 85, 85);
+    }
+
+}
+
+
+
+@media (min-width: 460px) and (max-width: 700px) {
+
+    .body {
+        width: 350px;
+        margin-left: 45px;
+    }
+    .subject {
+        font-size: 25px;
+
+    }
+
+    .date {
+        font-size: 13px;
+    }
+
+
+    .sender {
+        font-size: 13px;
+    }
+
+
+
+
+}
+
+@media (min-width: 700px) {
+
+    .body {
+        width: 450px;
+        letter-spacing: 0.05rem;
+        margin-left: 45px;
+        align-self: flex-start;
+    }
+
+    .mail-content {
+        width: 550px;
+    }
+
+    .subject {
+        font-size: 25px;
+
+    }
+
+    .date {
+        font-size: 13px;
+    }
+
+    .sender {
+        font-size: 18px;
+    }
+
 }

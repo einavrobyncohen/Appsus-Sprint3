@@ -13,7 +13,11 @@ export const gmailService = {
     changeEmailToRead,
     sendEmail,
     removeEmail,
-    getUnread
+    getUnread,
+    starEmail,
+    unStarEmail,
+    changeEmailToUnRead,
+    trashEmail
 }
 
 function getUnread() {
@@ -27,7 +31,6 @@ function getUnread() {
 
 
 function sendEmail(email) {
-    console.log(email)
     return query()
     .then(emails => {
         emails.push(email)
@@ -48,9 +51,29 @@ function getEmailById(emailId) {
     return storageService.get(EMAILS_KEY,emailId)
 }
 
+function trashEmail(email) {
+    email.isTrash = true
+    return storageService.put(EMAILS_KEY, email)
+}
+
 function changeEmailToRead(email) {
         email.isRead = true;
         return storageService.put(EMAILS_KEY, email)
+}
+
+function changeEmailToUnRead(email) {
+    email.isRead = false;
+    return storageService.put(EMAILS_KEY, email)
+
+}
+function starEmail(email) {
+    email.isStarred = true
+    return storageService.put(EMAILS_KEY, email)
+}
+
+function unStarEmail(email) {
+    email.isStarred = false
+    return storageService.put(EMAILS_KEY, email)
 }
 
 function _createEmails() {
@@ -63,16 +86,20 @@ function _createEmails() {
                 subject: 'This is just a random subject',
                 body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam!',
                 isRead: false,
+                isStarred: false,
+                isTrash: false,
                 sentAt : 1636623867,
                 to: 'user@appsus.com',
                 from: 'sheker@mimi.com'
             },
             {
                 id: 'e102',
-                sender: 'Mahatma Appsus',
+                sender: 'Mahatma',
                 subject: 'Miss you!',
                 body: 'dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam',
                 isRead: false,
+                isStarred: false,
+                isTrash: false,
                 sentAt : 1636382735,
                 to: 'momo@momo.com',
                 from: 'user@appsus.com'
@@ -83,6 +110,8 @@ function _createEmails() {
                 subject: 'Ani Aohevet Et Shlomo Artzi',
                 body: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos',
                 isRead: false,
+                isStarred: false,
+                isTrash: false,
                 sentAt : 1636299935,
                 to: 'user@appsus.com',
                 from: 'mize@ani.com'
@@ -93,6 +122,8 @@ function _createEmails() {
                 subject: 'Ba Li Pizza Zeitim!',
                 body: 'ze kreiv moozar, aval ze ma shabali. vemi shlo tov lo, yom tov lo',
                 isRead: false,
+                isStarred: false,
+                isTrash: false,
                 sentAt : 1633707935,
                 to: 'user@appsus.com',
                 from: 'mize@ani.com'
@@ -103,6 +134,8 @@ function _createEmails() {
                 subject: 'Contrary to popular belief..',
                 body: 'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, ',
                 isRead: false,
+                isStarred: false,
+                isTrash: false,
                 sentAt : 1636209935,
                 to: 'user@appsus.com',
                 from: 'mize@ani.com'
@@ -121,10 +154,10 @@ const loggedinUser = {
     fullname: 'Mahatma Appsus'
 }
 
-const criteria = {
-    status: 'inbox/sent/trash/draft',
-    txt: 'puki', // no need to support complex text search
-    isRead: true, // (optional property, if missing: show all)
-    isStared: true, // (optional property, if missing: show all)
-    lables: ['important', 'romantic'] // has any of the labels
-}
+// const criteria = {
+//     status: 'inbox/sent/trash/draft',
+//     txt: 'puki', // no need to support complex text search
+//     isRead: true, // (optional property, if missing: show all)
+//     isStared: true, // (optional property, if missing: show all)
+//     lables: ['important', 'romantic'] // has any of the labels
+// }
