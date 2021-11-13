@@ -1,0 +1,15 @@
+.note-filter {
+    text-align: center;
+    margin: 10px 0 0;
+    font-family: cursive;
+}
+
+.note-filter input {
+    text-align: center;
+    font-family: cursive;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    font-size: 1rem;
+    padding: 5px;
+}

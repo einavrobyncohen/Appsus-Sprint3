@@ -47,18 +47,18 @@ const gNotes = [{
     },
 
 
+    // {
+    //     id: utilService.makeId(),
+    //     type: "note-video",
+    //     info: {
+    //         url: '   https://www.youtube.com/embed/Uw4zU-fHpx0',
+    //         title: "Break Time"
+    //     },
+    //     style: {
+    //         backgroundColor: 'lightgreen'
+    //     }
+    // },
     {
-        //     id: utilService.makeId(),
-        //     type: "note-video",
-        //     info: {
-        //         url: "https://www.youtube.com/watch?v=KDIbpeu9Ccw",
-        //         title: "The Roof Is On Fireeee!"
-        //     },
-        //     style: {
-        //         backgroundColor: 'lightgreen'
-        //     }
-        // },
-        // {
         id: utilService.makeId(),
         type: "note-txt",
         isPinned: true,

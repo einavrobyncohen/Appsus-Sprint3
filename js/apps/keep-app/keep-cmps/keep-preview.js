@@ -1,5 +1,4 @@
 import { keepService } from "../services/keep-service.js"
-import { utilService } from '../../../services/util-service.js'
 import noteTxt from "../keep-cmps/note-txt.js"
 import noteImg from "./note-img.js"
 import noteTodos from "../keep-cmps/note-todos.js"
@@ -16,7 +15,7 @@ export default {
     <section class="edit">
                   <div>
                   <ul class="tool-bar">
-                        <!-- <li><img src="imgs/pin.png" alt=""></li> -->
+                        <li @click="pinNote(note.id)"><img src="imgs/pin.png" alt=""></li>
                         <li @click="isColorOpen=!isColorOpen"><img src="imgs/palette.png" alt=""></li>
                         <li><img src="imgs/letter.png" alt=""></li>
                         <li @click="duplicate()"><img src="imgs/duplicate.png" alt=""></li>
@@ -37,6 +36,7 @@ export default {
             colors: keepService.getColorsOption(),
             isColorOpen: false,
             isEdited: false,
+            isPinned: false
         }
     },
     computed: {
@@ -59,6 +59,12 @@ export default {
             const newNote = {...this.note }
             newNote.id = null
             this.$emit('duplicateNote', newNote)
+        },
+        pinNote(noteId) {
+            this.isPinned = !this.isPinned
+            this.$emit('pinNote', noteId)
+            console.log('isPinned', this.isPinned);
+            console.log('note-preview', noteId);
         }
     },
     components: {

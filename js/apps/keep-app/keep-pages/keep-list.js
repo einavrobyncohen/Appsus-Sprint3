@@ -9,7 +9,7 @@ export default {
         <div>
             <ul class="note-list" >
                 <li v-for="note in notes"  :key="note.id" class="note-container" :style="{backgroundColor: note.style.backgroundColor}">
-                    <keep-preview @editNote="editNote" @duplicateNote="duplicateNote" :note="note" @remove="remove" @changeColor="changeColor"></keep-preview>
+                    <keep-preview @pinNote="pinNote" @editNote="editNote" @duplicateNote="duplicateNote" :note="note" @remove="remove" @changeColor="changeColor"></keep-preview>
                 </li>
             </ul>
         </div>
@@ -49,6 +49,10 @@ export default {
         },
         duplicateNote(newNote) {
             this.$emit('duplicateNote', newNote)
+        },
+        pinNote(noteId) {
+            this.$emit('pinNote', noteId)
+            console.log('note-list', noteId);
         }
     },
     components: {

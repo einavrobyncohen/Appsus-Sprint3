@@ -3,11 +3,18 @@
     text-align: center;
 }
 
+.note-video {
+    height: 150px;
+    text-align: center;
+}
+
 .note-img img {
+    margin-top: 10px;
     width: 250px;
 }
 
-.note-img h1 {
+.note-img h1,
+.note-video h1 {
     font-size: 1.5rem;
     margin: 0;
 }
