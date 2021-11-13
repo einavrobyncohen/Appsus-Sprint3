@@ -113,7 +113,18 @@
 
     }
     .date {
-        font-size: 11px;
+        font-size: 12px;
+    }
+
+    .sender {
+        display: flex;
+        font-size: 10px;
+    }
+
+    .from {
+        
+        font-size: 12px;
+        color: rgb(85, 85, 85);
     }
 
 }
@@ -134,6 +145,12 @@
     .date {
         font-size: 13px;
     }
+
+
+    .sender {
+        font-size: 13px;
+    }
+
 
 
 
@@ -159,6 +176,10 @@
 
     .date {
         font-size: 13px;
+    }
+
+    .sender {
+        font-size: 18px;
     }
 
 }

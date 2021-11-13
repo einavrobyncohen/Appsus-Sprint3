@@ -28,6 +28,7 @@ export default {
     created() {
         this.loadEmails(),
         eventBus.$on('remove' ,this.removeEmail)
+        eventBus.$on('trash' ,this.trashEmail)
         eventBus.$on('emailSent', this.sentEmail)
         
     },
@@ -42,6 +43,9 @@ export default {
             gmailService.removeEmail(emailId).then(
                 this.emails = this.emails.filter(email => email.id !== emailId)
             )
+        },
+        trashEmail(email) {
+            gmailService.trashEmail(email).then(()=> this.loadEmails())
         },
         sentEmail(emptyEmail) {
             gmailService.sendEmail(emptyEmail).then(()=> this.loadEmails())

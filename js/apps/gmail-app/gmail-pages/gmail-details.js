@@ -2,13 +2,14 @@ import { gmailService } from "../services/gmail-service.js";
 import { eventBus } from "../../../services/event-bus-service.js";
 
 export default {
+    name:'details',
     component: {
     },
     template:`<section class="gmail-details main-content">
-        <div class="mail-content">
+        <div v-if="email" class="mail-content">
             <div class="subject">{{email.subject}}</div>
             <div class="date">{{showDate}}</div>
-            <img  @click="deleteEmail(email.id)" src="imgs/delete.png">
+            <img  @click="trash(email.id)" src="imgs/delete.png">
             <img  @click="backToMailList" src="imgs/back.png"> 
             <div class="sender-details">
                 <div class="sender">{{email.sender}}</div>
@@ -28,9 +29,12 @@ export default {
         backToMailList() {
             this.$router.push({ path: '/gmailApp' })
         },
-        deleteEmail(emailId) {
-            eventBus.$emit('remove', emailId)
-            this.$router.push({ path: '/gmailApp' })
+        trash(emailId) {
+            gmailService.getEmailById(emailId).then((email) => {
+                eventBus.$emit('trash', email)
+                this.$router.push({ path: '/gmailApp' })
+            })
+  
         }
 
     },

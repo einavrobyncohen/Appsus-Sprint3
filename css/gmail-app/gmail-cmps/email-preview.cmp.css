@@ -169,33 +169,33 @@
 @media (max-width: 730px) and (min-width: 460px) {
     .email-modal-small {
         position: relative;
-        width: 440px;
+        width: 450px;
         grid-template-rows:  3px 15px 3px ;
         gap: 9px;
     }
 
     .email-modal-medium {
-        width: 440px;
+        width: 570px;
     }
 
     .delete-hover-btn {
         position: absolute;
-        right: 10px;
-        top:-85px;
+        right: 90px;
+        top:-62px;
         width: 20px;
     }
     
     .unread-hover-btn {
         position: absolute;
-        right: 40px;
-        top:-85px;
+        right: 60px;
+        top:-62px;
         width: 20px;
     }
     
     .read-hover-btn {
         position: absolute;
-        right: 40px;
-        top:-85px;
+        right: 60px;
+        top:-62px;
         width: 20px;
     }
 
@@ -231,6 +231,28 @@
         font-size: 14px;
         font-family: manrope-m;
     }
+
+    .remove-email {
+        border :none;
+        background-color: transparent;
+        cursor: pointer;
+       position: absolute;
+       right: 140px;
+    }
+
+    .show-details {
+        border :none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 10px;
+        position: absolute;
+        top: 2px;
+        right: 160px;
+    }
+    .body-medium {
+        width: 430px;
+        font-size: 11px;
+     }
 }
 
 
@@ -277,6 +299,7 @@
     }
 
     .sender-small {
+        margin-left: 50px;
         font-weight:600;
     }
     
@@ -298,5 +321,11 @@
         position: absolute;
         top: 2px;
         right: 120px;
+    }
+
+    .star-img {
+        margin-left: 10px;
+        opacity: 0.7;
+        width: 20px;
     }
 }

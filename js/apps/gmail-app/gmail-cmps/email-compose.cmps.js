@@ -1,5 +1,6 @@
 
 import {eventBus}  from '../../../services/event-bus-service.js'
+var newEmails = []
 
 export default {
     template:`
@@ -22,11 +23,12 @@ export default {
         return{
             emptyEmail: {
                 id: null,
-                sender: 'Mahatma Appsus',
+                sender: 'Mahatma',
                 subject:'',
                 body:'',
                 isRead: false,
                 isStarred: false,
+                isTrash: false,
                 sentAt: Date.now(),
                 to: '',
                 from: 'user@appsus.com'

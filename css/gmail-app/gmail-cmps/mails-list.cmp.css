@@ -14,19 +14,19 @@
 
     .emails-list .list {
         margin-top: 70px;
-        width: 360px;
+        width: 375px;
         height: 80vh;
     }
 }
 
 @media (max-width: 730px) and (min-width: 460px) {
-
     .emails-list {
-        margin: 0 auto;
+        margin-left: 20px;
     }
+
     .emails-list .list {
         margin-top: 70px;
-        min-width: 420px;
+        width: 450px;
         height: 80vh;
     }
 }

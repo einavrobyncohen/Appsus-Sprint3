@@ -17,7 +17,7 @@ export default {
                 <div @click.stop="starClicked"><img class="folder-icons" src="imgs/star.png">Starred</div>
                 <div @click.stop="sentClicked"><img class="folder-icons" src="imgs/sent.png">Sent</div>
                 <div><img class="folder-icons" src="imgs/draft.png">Drafts</div>
-                <div><img class="folder-icons" src="imgs/delete.png">Trash</div>
+                <div  @click.stop="trashClicked"><img class="folder-icons" src="imgs/delete.png">Trash</div>
             </div>
         </div>
             
@@ -31,7 +31,7 @@ export default {
                     <div @click.stop="starClicked">Starred</div>
                     <div @click.stop="sentClicked">Sent</div>
                     <div>Drafts</div>
-                    <div>Trash</div>
+                    <div @click.stop="trashClicked">Trash</div>
                 </div>
             </div>
 
@@ -41,18 +41,29 @@ export default {
     created() {
         eventBus.$on('read', this.read)
         eventBus.$on('getUnread', this.updateUnread)
+        this.isMobileMode = true
         window.addEventListener("resize", this.myEventHandler)
+        this.determine()
     },
+
     data() {
         return {
             openCompose: false,
             unread:null,
             isMobileMode: false,
             isHamburgerActive: false,
-            isHaburderInactive: true
+            isHaburderInactive: true,
+            windowWidth: window.innerWidth
         }
     }, 
     methods: {
+        determine() {
+            if (this.windowWidth >= 730)  {
+                this.isMobileMode = false
+            } else if (this.windowWidth <730) {
+                this.isMobileMode = true
+            }
+        },
         read(amount) {
             this.unread = amount
         },
@@ -73,6 +84,12 @@ export default {
             this.isHamburgerActive = false
             this.isHaburderInactive = true
             eventBus.$emit('display', 'star')
+
+        },
+        trashClicked() {
+            this.isHamburgerActive = false
+            this.isHaburderInactive = true
+            eventBus.$emit('display', 'trash')
 
         },
         isOpenCompose() {
@@ -97,7 +114,6 @@ export default {
     }, 
     computed: {
         getUnread() {
-            console.log(this.unread)
             return this.unread
         }
     }

@@ -1,4 +1,5 @@
 .email-filter {
+    
     display: flex;
     font-family: manrope-m;
     margin-top: 15px;
@@ -18,11 +19,12 @@
 }
 
 .more-options {
+    z-index: 1;
     font-size: 13px;
     position: absolute;
     padding: 7px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    background-color: rgba(243, 243, 243, 0.301);
+    background-color: rgba(243, 243, 243, 0.836);
     top: 40px;
     display: flex;
     padding-inline-start: 10px;
@@ -91,6 +93,9 @@
         display: none;
     
     }
+    .more-options {
+        background-color: rgba(255, 255, 255, 0.884);
+    }
 
 }
 
@@ -108,6 +113,10 @@
         display: none;
     
     }
+    .more-options {
+        background-color: rgba(255, 255, 255, 0.884);
+        width: 300px;
+    }
  
 }
 
@@ -124,6 +133,7 @@
     }
 
     .more-options {
+        background-color: rgba(255, 255, 255, 0.836);
         width: 500px;
     }
     .search-img {
