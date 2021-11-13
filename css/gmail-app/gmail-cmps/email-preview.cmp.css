@@ -95,7 +95,7 @@
 /* helpers */
 
 .read {
-    background-color: rgba(240, 240, 240, 0.712);
+    background-color: rgba(228, 228, 228, 0.377);
     color: rgb(94, 94, 94);
 }
 
@@ -103,9 +103,11 @@
 @media (max-width: 460px) {
 
     .email-modal-small {
+        border: none;
+        border-bottom: .2px solid rgb(212, 212, 212);
         position: relative;
         width: 360px;
-        grid-template-rows:  3px 5px 3px ;
+        grid-template-rows:  10px 5px 3px ;
     }
 
     .email-modal-medium {
@@ -113,9 +115,10 @@
     }
 
     .star-img {
+        width: 25px;
         margin: auto;
         margin-top: 50px;
-        margin-left: 330px;
+        margin-left: 320px;
     }
 
     .delete-hover-btn {
@@ -140,7 +143,8 @@
     }
 
     .date-preview {
-        top:-90px;
+        font-family: manrope-m;
+        top:-100px;
         left: 280px;
     }
     .sender-small {
@@ -148,7 +152,7 @@
         letter-spacing: 0.03rem;
         margin-left: 20px;
         margin-bottom: 30px;
-        font-size: 20px;
+        font-size: 17px;
         font-family: manrope-m;
     }
 
@@ -162,7 +166,7 @@
         margin-top: 40px;
         letter-spacing: 0.03rem;
         margin-left: 20px;
-        font-size: 16px;
+        font-size: 13px;
         font-family: manrope-m;
     }
 }
@@ -260,7 +264,7 @@
 
 @media (min-width: 730px) {
     .email-modal-small {
-        grid-template-columns:  10px 1fr 1fr 2fr   .8fr;
+        grid-template-columns:  10px 1fr 1.5fr 2fr  .8fr;
         width: 85vw;
         border: .3px solid rgba(180, 180, 180, 0.514);
         border-collapse: collapse;
@@ -299,11 +303,14 @@
     }
 
     .sender-small {
+        font-family: manrope-m;
         margin-left: 50px;
         font-weight:600;
     }
     
     .subject-small {
+        margin-left: -15px;
+        font-family: manrope-m;
         font-weight:600;
     }
     .remove-email {

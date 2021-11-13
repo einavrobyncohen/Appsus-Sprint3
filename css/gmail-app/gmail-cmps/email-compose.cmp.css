@@ -8,6 +8,33 @@
     transform: translate(-50%,-50%);
 }
 
+
+.user-msg-compose {
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    transform: translate(-50%,-50%);
+
+}
+
+.speach{
+    position: relative;
+    width: 160px;
+    height: 100px;
+
+}
+
+.speach-txt {
+    font-family: right;
+    color: rgb(189, 124, 169);
+    font-size: 12px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%,-50%);
+}
+
 .exit {
     cursor: pointer;
     margin-right: 10px;
@@ -34,6 +61,7 @@
 }
 
 .email-compose textarea {
+    position: relative;
     border: none;
     height: 250px;
 }
@@ -89,6 +117,7 @@
         width: 350px;
     }
 
+  
 
 }
 
@@ -99,6 +128,7 @@
         top: 46%;
         width: 450px;
     }
+
 
 
 }

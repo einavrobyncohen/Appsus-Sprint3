@@ -1,6 +1,5 @@
 
 import {eventBus}  from '../../../services/event-bus-service.js'
-var newEmails = []
 
 export default {
     template:`
@@ -13,10 +12,10 @@ export default {
             <textarea v-model="emptyEmail.body"></textarea>
             <div class="actions">
                 <button :disabled="isLimit" class="send" @click.prevent="sendEmail">Send</button>
-                <button class="trash"><img class="close-modal" src="imgs/delete.png"></button>
+                <button  @click="closeModal" class="trash"><img class="close-modal" src="imgs/delete.png"></button>
             </div>
         </form>
-        <div v-if="isShowMsg">Subject should be no longer than 20 characters!</div>
+        <div class ="user-msg-compose" v-if="isShowMsg"><img class="speach"src="imgs/speach.png"><span class="speach-txt">Keep It Short!<span></div>
     </section>
     `,
     data() {

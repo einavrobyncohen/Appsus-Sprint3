@@ -17,7 +17,7 @@ export default {
             </select>
             Read At:<input v-model="review.readAt" type="date"/>
             Review:<textarea v-model="review.text"></textarea>
-            <button @click.prevent="saveReview(book.id)">Save</button>
+            <button class="savebtn" @click.prevent="saveReview(book.id)">Save</button>
         </form>
 
         <div class="reviews">

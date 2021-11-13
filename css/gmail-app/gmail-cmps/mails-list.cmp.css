@@ -1,4 +1,5 @@
 .emails-list .list{
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     overflow:scroll;

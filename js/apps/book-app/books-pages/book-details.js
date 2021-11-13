@@ -10,13 +10,13 @@ export default {
 
     template: `
         <section v-if="book" class="book-details app-main">
-            <h3>Book Title: "{{book.title}}"</h3>
-            <h4 v-for="author in book.authors">By {{author}}</h4>
-            <h4>Published At: {{book.publishedDate}}</h4>
+            <h3 class="book-title">Book Title: "{{book.title}}"</h3>
+            <h4 class="authors" v-for="author in book.authors">By {{author}}</h4>
+            <h4 class="published" >Published At: {{book.publishedDate}}</h4>
             <img :src="book.thumbnail">
-            <p>{{book.subtitle}}</p>
-            <p><span>{{bookLength}}</span> <span>| {{bookAge}}</span></p>
-            <p>Categories: <span v-for="category in book.categories"> {{category}} </span></p>
+            <p class="subtitle">{{book.subtitle}}</p>
+            <p class="details-extra"><span>{{bookLength}}</span> <span>| {{bookAge}}</span></p>
+            <p class="categories">Categories: <span v-for="category in book.categories"> {{category}} </span></p>
             <long-text :txt="book.description" />
             <review-add :book="book"/>
         </section>

@@ -146,7 +146,7 @@ export default {
     },
     computed: {
         showDate() {
-            let date =`${new Date(this.email.sentAt).toString().slice(4,10)}, ${new Date(this.email.sentAt*1000).toString().slice(20,25)}` 
+            let date =`${new Date(this.email.sentAt*1000).toString().slice(4,10)}, ${new Date(this.email.sentAt).toString().slice(20,25)}` 
             return date
         }
     }

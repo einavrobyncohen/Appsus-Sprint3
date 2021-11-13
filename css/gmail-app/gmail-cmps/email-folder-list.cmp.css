@@ -246,7 +246,7 @@
     }
 
     .compose-btn{
-        font-family: manrope-m;
+        font-family: manrope-l;
         cursor: pointer;
         border:none;
         padding: 13px;
@@ -264,22 +264,20 @@
     }
 
     .side-bar >:hover {
-        background: rgba(250, 5, 99, 0.062);
-        border-end-end-radius:10px ;
-        border-end-start-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 10px;
-        color: red;
+        background: rgba(224, 224, 224, 0.692);
+        border-radius: 20px;
+  
     }
     .side-bar span {
-        margin-left: 60px;
+        font-weight: 900;
+        margin-left: 20%;
         margin-right: 10px;
     }
     .side-bar {
         padding-bottom: 3px;
         font-size: 13px;
         color: rgb(61, 61, 61);
-        margin-top: 25px;
+        margin-top: 30px;
     }
 
 
