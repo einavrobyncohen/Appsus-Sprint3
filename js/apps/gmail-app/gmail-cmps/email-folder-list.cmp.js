@@ -16,7 +16,6 @@ export default {
                 <div @click.stop="inboxClicked"><img class="folder-icons" src="imgs/inbox.png">Inbox <span>{{getUnread}}</span></div>
                 <div @click.stop="starClicked"><img class="folder-icons" src="imgs/star.png">Starred</div>
                 <div @click.stop="sentClicked"><img class="folder-icons" src="imgs/sent.png">Sent</div>
-                <div><img class="folder-icons" src="imgs/draft.png">Drafts</div>
                 <div  @click.stop="trashClicked"><img class="folder-icons" src="imgs/delete.png">Trash</div>
             </div>
         </div>
@@ -30,7 +29,6 @@ export default {
                     <div @click.stop="inboxClicked">Inbox <span>{{getUnread}}</span></div>
                     <div @click.stop="starClicked">Starred</div>
                     <div @click.stop="sentClicked">Sent</div>
-                    <div>Drafts</div>
                     <div @click.stop="trashClicked">Trash</div>
                 </div>
             </div>

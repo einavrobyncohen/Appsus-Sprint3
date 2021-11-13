@@ -3,7 +3,7 @@ export default {
     template: `
     <header class="app-header">
         <div class="logo">
-            <img class="logo-img" src="imgs/logo.png">
+        <img @click="goToHome" class="logo-img" src="imgs/logo.png">
         </div>
             <nav class="main-nav-container">
                 <router-link style="text-decoration: none; color: inherit" to="/">Home</router-link> 
@@ -14,5 +14,10 @@ export default {
             </nav>
     </header>
     `,
+    methods: {
+        goToHome() {
+            this.$router.push({ path: '/' })
+        }
+    }
 
 }

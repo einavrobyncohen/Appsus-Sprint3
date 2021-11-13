@@ -4,44 +4,9 @@
     background-color: #ffffff;
 }
 
-
-.home-img {
-    position: absolute;
-    right:0;
-   width: 800px;
-   height: 80vh;
-}
-
 .commercial {
     height: 90vh;
     z-index: 1;
-}
-
-.commercial-main {
-    background-color: rgba(255, 205, 3, 0.445);
-    font-family: right;
-    color: rgb(255,93,171);
-    font-size: 45px;
-    position: absolute;
-    margin-left: 90px;
-    margin-top: 140px;
-}
-
-.commercial-secondary {
-    font-family: right;
-    color: rgba(72, 61, 194, 0.514);
-    font-size: 40px;
-    position: absolute;
-    margin-left: 90px;
-    margin-top: 190px;
-}
-
-.features {
-    
-    position: relative;
-    top: 370px;
-    display: flex;
-    margin-left: 90px
 }
 
 .feature-email {
@@ -91,3 +56,189 @@
     margin-left: 364px;
 }
 
+
+@media (max-width: 630px) {
+
+    .home-img {
+    display: none;
+    } 
+
+    .commercial-main {
+        margin-top: 80px;
+       justify-content: center;
+        display: flex;
+        background-color: rgba(255, 205, 3, 0.445);
+        font-family: right;
+        color: rgb(255,93,171);
+        font-size: 30px;
+   
+
+    }
+    
+    .commercial-secondary {
+        display: flex;
+        font-family: right;
+        color: rgba(72, 61, 194, 0.514);
+        font-size: 25px;
+        justify-content: center;
+    }
+
+    .features {
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .feature-email-p {
+        display: none;
+
+     
+    }
+    
+    .feature-todos-p {
+        display: none;
+
+    }
+    
+    .feature-read-p {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 630px) and (max-width:1200px) {
+    .home-img {
+        opacity: 0.2;
+        position: absolute;
+        right:0;
+       width: 800px;
+       height: 80vh;
+    }
+
+    .commercial-main {
+        background-color: rgba(255, 205, 3, 0.445);
+        font-family: right;
+        color: rgb(255,93,171);
+        font-size: 45px;
+        position: absolute;
+        margin-left: 90px;
+        margin-top: 140px;
+    }
+    
+    .commercial-secondary {
+        font-family: right;
+        color: rgba(72, 61, 194, 0.514);
+        font-size: 40px;
+        position: absolute;
+        margin-left: 90px;
+        margin-top: 190px;
+    }
+
+    .features {
+    
+        position: relative;
+        top: 370px;
+        display: flex;
+        margin-left: 90px
+    }
+
+    .feature-email-p {
+        margin-top: 10px;
+        font-family: right;
+        color: rgba(62, 62, 63, 0.952);
+        position: absolute;
+        top:80px;
+        margin-left: -3px;
+     
+    }
+    
+    .feature-todos-p {
+        margin-top: 10px;
+        font-family: right;
+        color: rgba(62, 62, 63, 0.952);
+        position: absolute;
+        top:80px;
+        margin-left: 154px;
+    }
+    
+    
+    .feature-read-p {
+        margin-top: 10px;
+        color: rgba(62, 62, 63, 0.952);
+        font-family: right;
+        position: absolute;
+        top:80px;
+        margin-left: 364px;
+    }
+
+}
+
+@media (min-width:1200px) {
+
+
+    .home-img {
+        position: absolute;
+        right:0;
+        width: 800px;
+        height: 80vh;
+    }
+
+    .commercial-main {
+        background-color: rgba(255, 205, 3, 0.445);
+        font-family: right;
+        color: rgb(255,93,171);
+        font-size: 45px;
+        position: absolute;
+        margin-left: 90px;
+        margin-top: 140px;
+    }
+    
+    .commercial-secondary {
+        font-family: right;
+        color: rgba(72, 61, 194, 0.514);
+        font-size: 40px;
+        position: absolute;
+        margin-left: 90px;
+        margin-top: 190px;
+    }
+
+    .features {
+    
+        position: relative;
+        top: 370px;
+        display: flex;
+        margin-left: 90px
+    }
+
+    .feature-email-p {
+        margin-top: 10px;
+        font-family: right;
+        color: rgba(62, 62, 63, 0.952);
+        position: absolute;
+        top:80px;
+        margin-left: -3px;
+     
+    }
+    
+    .feature-todos-p {
+        margin-top: 10px;
+        font-family: right;
+        color: rgba(62, 62, 63, 0.952);
+        position: absolute;
+        top:80px;
+        margin-left: 154px;
+    }
+    
+    
+    .feature-read-p {
+        margin-top: 10px;
+        color: rgba(62, 62, 63, 0.952);
+        font-family: right;
+        position: absolute;
+        top:80px;
+        margin-left: 364px;
+    }
+
+}

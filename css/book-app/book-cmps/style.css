@@ -24,21 +24,58 @@ body {
 
 /* details */
  .book-details {
+     font-size: 15px;
+     display: flex;
+     flex-direction: column;
     font-family:  manrope-l;
     text-align: center;
     letter-spacing: 0.05rem;
+
 }
 
 
 
-.book-details img {
+.book-details >img {
+    margin: 0 auto;
+    width: 150px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    
 } 
+
+
+.book-title {
+ font-size: 20px;
+
+}
+
+.authors {
+    margin: 0;
+}
+
+.published {
+    margin:0;
+}
+
+.subtitle {
+    margin: 0;
+}
+
+.categories {
+    margin:0;
+}
+
+.details-extra {
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 300px;
+    background-color: rgb(245, 150, 198);
+}
+
+
+
 
 .book-description {
     font-family:  manrope-l;
-    background-color: #dfdfdfec;
+    font-style: italic;
     margin: 0 auto;
     width: 500px;
 } 
@@ -46,20 +83,21 @@ body {
 
 /* add-review */
 
- .add-review > {
+ .add-review  {
+     border:none;
     font-family:  manrope-l;
     top: 0;
     margin: 0 auto;
-    background-color: burlywood;
-    width: 500px;
+    background-color: rgba(231, 216, 195, 0.637);
+    width: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 } 
 
-.add- review {
-    position: absolute;
+.add-review * {
+    border:none;
 }
 
 
@@ -117,7 +155,14 @@ body {
     height: 50px;
 }
 
+.reviews {
+    border: 1px solid gray
+}
 
+.savebtn {
+    color: white;
+    background-color: gray;
+}
 /* footer */
 
 
@@ -132,18 +177,18 @@ body {
 
 
 .user-msg {
+    font-size: 12px;
     position: absolute;
     top: 50px;
-    right: 0;
-    padding: 10px;
+    right: 20px;
 }
 
 .success {
-    background-color: rgb(27, 180, 27);
+    background-color: rgb(148, 219, 148);
 }
 
 .error {
-    background-color: red;
+    background-color: rgb(243, 198, 198);
 }
 
 /* links */

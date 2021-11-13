@@ -59,9 +59,7 @@ export default {
         determine() {
             if (this.windowWidth <= 460)  {
                 this.isHover = false
-            } else if (this.windowWidth >730) {
-                this.isHover = true
-            }
+            } 
         },
         showPreview() {
             this.isShowPreview = !this.isShowPreview
@@ -95,7 +93,7 @@ export default {
     },
     computed: {
         showDate() {
-            let date = `${new Date(this.email.sentAt).toString().slice(4,10)}, ${new Date(this.email.sentAt*1000).toString().slice(20,25)}`
+            let date =`${new Date(this.email.sentAt*1000).toString().slice(4,10)}, ${new Date(this.email.sentAt).toString().slice(20,25)}` 
             return date
         }
     }

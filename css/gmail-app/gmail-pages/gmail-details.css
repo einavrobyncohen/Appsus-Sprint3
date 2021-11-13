@@ -105,11 +105,12 @@
 @media (max-width: 460px) {
 
     .body {
+        font-size: 11px;
         margin-left: 10px;
     }
 
     .subject {
-        font-size: 20px;
+        font-size: 12px;
 
     }
     .date {
@@ -123,7 +124,7 @@
 
     .from {
         
-        font-size: 12px;
+        font-size: 10px;
         color: rgb(85, 85, 85);
     }
 
@@ -138,7 +139,7 @@
         margin-left: 45px;
     }
     .subject {
-        font-size: 25px;
+        font-size: 17px;
 
     }
 
@@ -149,6 +150,11 @@
 
     .sender {
         font-size: 13px;
+    }
+
+    .from {
+        
+        font-size: 11px;
     }
 
 
