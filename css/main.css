@@ -15,6 +15,7 @@
 @import "./gmail-app/gmail-pages/gmail-details.css";
 @import "./keep-app/keep-pages/keep-list.css";
 @import "./keep-app/keep-cmps/keep-preview.css";
+@import "./keep-app/keep-cmps/keep-add.css";
 @import "./keep-app/keep-cmps/note-txt.css";
 @import "./keep-app/keep-cmps/note-img.css";
 @import "./keep-app/keep-cmps/note-todos.css";
@@ -32,8 +33,6 @@ html {
     font-weight: lighter;
 }
 
-
 body {
     margin: 0;
 }
-

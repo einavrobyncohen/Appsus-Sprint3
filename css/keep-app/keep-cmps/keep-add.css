@@ -1,0 +1,36 @@
+.notes-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 100px;
+    width: 700px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.notes-box input {
+    font-family: cursive;
+}
+
+.todo-list input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 0;
+}
+
+.add-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-todos {
+    margin: 0;
+}
+
+.add-todos input {
+    font-size: 1rem;
+}

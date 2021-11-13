@@ -1,7 +1,9 @@
 import { keepService } from "../services/keep-service.js"
+import { utilService } from '../../../services/util-service.js'
 import noteTxt from "../keep-cmps/note-txt.js"
-import noteImg from "../keep-cmps/note-img.js"
+import noteImg from "./note-img.js"
 import noteTodos from "../keep-cmps/note-todos.js"
+import noteVideo from "../keep-cmps/note-video.js"
 export default {
     props: ['note'],
     template: `
@@ -14,11 +16,12 @@ export default {
     <section class="edit">
                   <div>
                   <ul class="tool-bar">
-                        <li>📌</li>
-                        <li @click="isColorOpen=!isColorOpen">🎨</li>
-                        <li>📧</li>
-                        <li @click="editNote(note.id)">✍🏻</li>
-                        <li @click="remove(note.id)">🗑</li>
+                        <!-- <li><img src="imgs/pin.png" alt=""></li> -->
+                        <li @click="isColorOpen=!isColorOpen"><img src="imgs/palette.png" alt=""></li>
+                        <li><img src="imgs/letter.png" alt=""></li>
+                        <li @click="duplicate()"><img src="imgs/duplicate.png" alt=""></li>
+                        <li @click="editNote()"><img src="imgs/edit.png" alt=""></li>
+                        <li @click="remove(note.id)"><img src="imgs/trash-can.png" alt=""></li>
                     </ul> 
                   </div>
                    <div class="colors" v-if="isColorOpen">
@@ -31,7 +34,6 @@ export default {
     `,
     data() {
         return {
-
             colors: keepService.getColorsOption(),
             isColorOpen: false,
             isEdited: false,
@@ -49,14 +51,20 @@ export default {
         remove(noteId) {
             this.$emit('remove', noteId);
         },
-        editNote(noteId) {
+        editNote() {
             this.isEdited = !this.isEdited;
             this.$emit('editNote', this.note)
         },
+        duplicate() {
+            const newNote = {...this.note }
+            newNote.id = null
+            this.$emit('duplicateNote', newNote)
+        }
     },
     components: {
         noteTxt,
         noteImg,
         noteTodos,
+        noteVideo
     }
 }
